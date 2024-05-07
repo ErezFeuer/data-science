@@ -253,6 +253,7 @@ window.Quarto = {
   <li><a href="#rename-index-and-slice" id="toc-rename-index-and-slice" class="nav-link" data-scroll-target="#rename-index-and-slice"><span class="header-section-number">1.7</span> Rename, Index, and Slice</a>
   <ul class="collapse">
   <li><a href="#we-can-also-create-a-new-column" id="toc-we-can-also-create-a-new-column" class="nav-link" data-scroll-target="#we-can-also-create-a-new-column"><span class="header-section-number">1.7.1</span> We can also create a new column</a></li>
+  <li><a href="#slicing-by-condition" id="toc-slicing-by-condition" class="nav-link" data-scroll-target="#slicing-by-condition"><span class="header-section-number">1.7.2</span> Slicing by condition</a></li>
   </ul></li>
   <li><a href="#summary-statistics" id="toc-summary-statistics" class="nav-link" data-scroll-target="#summary-statistics"><span class="header-section-number">1.8</span> Summary statistics</a>
   <ul class="collapse">
@@ -360,11 +361,11 @@ window.Quarto = {
 </section>
 <section id="getting-started-with-pandas" class="level2" data-number="1.6">
 <h2 data-number="1.6" class="anchored" data-anchor-id="getting-started-with-pandas"><span class="header-section-number">1.6</span> Getting started with Pandas</h2>
-<div id="cell-7" class="cell">
+<div id="cell-7" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># import the pandas library</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-8" class="cell">
+<div id="cell-8" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># import the dataset</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a>okcupid_df <span class="op">=</span> pd.read_csv(<span class="st">'okcupid_profiles.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -372,10 +373,10 @@ window.Quarto = {
 <p>We can look at our data by using the <code>.head()</code> method.</p>
 <p>By default, this shows the header (column names) and the first five rows.</p>
 <p>Passing an integer, <span class="math inline">n</span>, to <code>.head()</code> returns that number of rows.</p>
-<div id="cell-10" class="cell">
+<div id="cell-10" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># peak at the data</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a>okcupid_df.head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 <div>
 
@@ -657,9 +658,9 @@ window.Quarto = {
 </div>
 </div>
 <p>Alternatively, to see the last <span class="math inline">n</span> rows, use <code>.tail()</code>.</p>
-<div id="cell-12" class="cell">
+<div id="cell-12" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>okcupid_df.tail(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <div>
 <div>
 
@@ -942,27 +943,27 @@ window.Quarto = {
 </div>
 <section id="to-find-the-number-of-rows-you-can-use-the-len-function.-alternatively-you-can-use-the-shape-attribute." class="level3" data-number="1.6.1">
 <h3 data-number="1.6.1" class="anchored" data-anchor-id="to-find-the-number-of-rows-you-can-use-the-len-function.-alternatively-you-can-use-the-shape-attribute."><span class="header-section-number">1.6.1</span> To find the number of rows, you can use the <code>len()</code> function. Alternatively, you can use the <code>shape</code> attribute.</h3>
-<div id="cell-14" class="cell">
+<div id="cell-14" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># get the length of the dataframe</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a><span class="bu">len</span>(okcupid_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>10000</code></pre>
 </div>
 </div>
-<div id="cell-15" class="cell">
+<div id="cell-15" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># get the size of the dataframe (rows, columns)</span></span>
 <span id="cb8-2"><a href="#cb8-2"></a>okcupid_df.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>(10000, 21)</code></pre>
 </div>
 </div>
 </section>
 <section id="what-are-all-the-columns-in-our-dataset" class="level3" data-number="1.6.2">
 <h3 data-number="1.6.2" class="anchored" data-anchor-id="what-are-all-the-columns-in-our-dataset"><span class="header-section-number">1.6.2</span> What are all the columns in our dataset?</h3>
-<div id="cell-17" class="cell">
+<div id="cell-17" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># get columns</span></span>
 <span id="cb10-2"><a href="#cb10-2"></a>okcupid_df.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>Index(['age', 'status', 'sex', 'orientation', 'body_type', 'diet', 'drinks',
        'drugs', 'education', 'ethnicity', 'height', 'income', 'job',
        'last_online', 'location', 'offspring', 'pets', 'religion', 'sign',
@@ -970,10 +971,10 @@ window.Quarto = {
       dtype='object')</code></pre>
 </div>
 </div>
-<div id="cell-18" class="cell">
+<div id="cell-18" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># get column data types</span></span>
 <span id="cb12-2"><a href="#cb12-2"></a>okcupid_df.dtypes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>age             int64
 status         object
 sex            object
@@ -1001,10 +1002,10 @@ dtype: object</code></pre>
 </section>
 <section id="accessing-a-single-column" class="level3" data-number="1.6.3">
 <h3 data-number="1.6.3" class="anchored" data-anchor-id="accessing-a-single-column"><span class="header-section-number">1.6.3</span> Accessing a single column</h3>
-<div id="cell-20" class="cell">
+<div id="cell-20" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># access a single column</span></span>
 <span id="cb14-2"><a href="#cb14-2"></a>okcupid_df[[<span class="st">'height'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="9">
 <div>
 <div>
 
@@ -1069,10 +1070,10 @@ dtype: object</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-21" class="cell">
+<div id="cell-21" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># let's try that a different way...</span></span>
 <span id="cb15-2"><a href="#cb15-2"></a>okcupid_df[<span class="st">'height'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>0       75
 1       70
 2       68
@@ -1087,10 +1088,10 @@ dtype: object</code></pre>
 Name: height, Length: 10000, dtype: int64</code></pre>
 </div>
 </div>
-<div id="cell-22" class="cell">
+<div id="cell-22" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># and another way...</span></span>
 <span id="cb17-2"><a href="#cb17-2"></a>okcupid_df.height</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>0       75
 1       70
 2       68
@@ -1113,14 +1114,14 @@ Name: height, Length: 10000, dtype: int64</code></pre>
 <section id="rename-index-and-slice" class="level2" data-number="1.7">
 <h2 data-number="1.7" class="anchored" data-anchor-id="rename-index-and-slice"><span class="header-section-number">1.7</span> Rename, Index, and Slice</h2>
 <p>You may have noticed that the <code>height</code> column data is in inches. Let’s rename the column so that the units are included in the name.</p>
-<div id="cell-25" class="cell">
+<div id="cell-25" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># rename the height column</span></span>
 <span id="cb19-2"><a href="#cb19-2"></a>okcupid_df.rename(columns<span class="op">=</span>{<span class="st">'height'</span> : <span class="st">'height_inches'</span>}, inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-26" class="cell">
+<div id="cell-26" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># check to see that the change was implemented</span></span>
 <span id="cb20-2"><a href="#cb20-2"></a>okcupid_df.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>Index(['age', 'status', 'sex', 'orientation', 'body_type', 'diet', 'drinks',
        'drugs', 'education', 'ethnicity', 'height_inches', 'income', 'job',
        'last_online', 'location', 'offspring', 'pets', 'religion', 'sign',
@@ -1129,9 +1130,9 @@ Name: height, Length: 10000, dtype: int64</code></pre>
 </div>
 </div>
 <p>Indices, like column names, can be used to select data. Indices can be used to select particular rows. In fact, you can do something like <code>.head()</code> with slicing using the <code>[]</code> operator.</p>
-<div id="cell-28" class="cell">
+<div id="cell-28" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>okcupid_df[:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="14">
 <div>
 <div>
 
@@ -1293,10 +1294,10 @@ Name: height, Length: 10000, dtype: int64</code></pre>
 </div>
 </div>
 <p>Before we continue, let’s spend some more time looking at a few useful ways to index data—that is, select rows. <code>.loc</code> primarily works with string labels. It accepts a single label, a list (or array) of labels, or a slice of labels (e.g., ‘a’ : ‘f’).</p>
-<div id="cell-30" class="cell">
+<div id="cell-30" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># another way to get a single column...</span></span>
 <span id="cb23-2"><a href="#cb23-2"></a>okcupid_df.loc[:, <span class="st">'sex'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>0       m
 1       m
 2       m
@@ -1311,10 +1312,10 @@ Name: height, Length: 10000, dtype: int64</code></pre>
 Name: sex, Length: 10000, dtype: object</code></pre>
 </div>
 </div>
-<div id="cell-31" class="cell">
+<div id="cell-31" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># we can also index based on rows</span></span>
 <span id="cb25-2"><a href="#cb25-2"></a>okcupid_df[<span class="dv">2</span>:<span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="16">
 <div>
 <div>
 
@@ -1405,9 +1406,9 @@ Name: sex, Length: 10000, dtype: object</code></pre>
 </div>
 <p>The difference is that the former returns a Series because we selected a single lable, while the latter returns a DataFrame because we selected a range of positions.</p>
 <p>Another indexing option, .iloc, primarily works with integer positions. To select specific rows, we can do the following.</p>
-<div id="cell-33" class="cell">
+<div id="cell-33" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a>okcupid_df.iloc[[<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">9</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="17">
 <div>
 <div>
 
@@ -1545,9 +1546,9 @@ Name: sex, Length: 10000, dtype: object</code></pre>
 </div>
 </div>
 <p>We can select a range of rows and specify the step value.</p>
-<div id="cell-35" class="cell">
+<div id="cell-35" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a>okcupid_df.iloc[<span class="dv">25</span>:<span class="dv">50</span>:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="18">
 <div>
 <div>
 
@@ -1710,10 +1711,11 @@ Name: sex, Length: 10000, dtype: object</code></pre>
 </div>
 <section id="we-can-also-create-a-new-column" class="level3" data-number="1.7.1">
 <h3 data-number="1.7.1" class="anchored" data-anchor-id="we-can-also-create-a-new-column"><span class="header-section-number">1.7.1</span> We can also create a new column</h3>
-<div id="cell-37" class="cell">
+<p>Here we create a new column with height in cm</p>
+<div id="cell-37" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a>okcupid_df[<span class="st">'height_cm'</span>] <span class="op">=</span> okcupid_df[<span class="st">'height_inches'</span>]<span class="op">*</span><span class="fl">2.54</span></span>
 <span id="cb28-2"><a href="#cb28-2"></a>okcupid_df[<span class="st">'height_cm'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="19">
 <pre><code>0       190.50
 1       177.80
 2       172.72
@@ -1730,9 +1732,9 @@ Name: height_cm, Length: 10000, dtype: float64</code></pre>
 </div>
 <section id="another-example" class="level4" data-number="1.7.1.1">
 <h4 data-number="1.7.1.1" class="anchored" data-anchor-id="another-example"><span class="header-section-number">1.7.1.1</span> Another example</h4>
-<div id="cell-39" class="cell">
+<div id="cell-39" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a>okcupid_df[<span class="st">'speaks'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>0                                                 english
 1       english (fluently), spanish (poorly), french (...
 2                                    english, french, c++
@@ -1747,10 +1749,11 @@ Name: height_cm, Length: 10000, dtype: float64</code></pre>
 Name: speaks, Length: 10000, dtype: object</code></pre>
 </div>
 </div>
-<div id="cell-40" class="cell">
+<p>Now we’ll create a column that has only the first language the person speaks.</p>
+<div id="cell-41" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1"></a>okcupid_df[<span class="st">'speaks first'</span>] <span class="op">=</span> okcupid_df[<span class="st">'speaks'</span>].dropna().<span class="bu">apply</span>(<span class="kw">lambda</span> x: x.split(<span class="st">','</span>)[<span class="dv">0</span>])</span>
 <span id="cb32-2"><a href="#cb32-2"></a>okcupid_df[<span class="st">'speaks first'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="21">
 <pre><code>0                  english
 1       english (fluently)
 2                  english
@@ -1767,15 +1770,327 @@ Name: speaks first, Length: 10000, dtype: object</code></pre>
 </div>
 </section>
 </section>
+<section id="slicing-by-condition" class="level3" data-number="1.7.2">
+<h3 data-number="1.7.2" class="anchored" data-anchor-id="slicing-by-condition"><span class="header-section-number">1.7.2</span> Slicing by condition</h3>
+<p>Lets say we want a df with only the females.</p>
+<div id="cell-43" class="cell" data-execution_count="39">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a>f_okcupid_df <span class="op">=</span> okcupid_df.loc[okcupid_df[<span class="st">'sex'</span>] <span class="op">==</span> <span class="st">'f'</span>]</span>
+<span id="cb34-2"><a href="#cb34-2"></a>f_okcupid_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="39">
+<div>
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">age</th>
+<th data-quarto-table-cell-role="th">status</th>
+<th data-quarto-table-cell-role="th">sex</th>
+<th data-quarto-table-cell-role="th">orientation</th>
+<th data-quarto-table-cell-role="th">body_type</th>
+<th data-quarto-table-cell-role="th">diet</th>
+<th data-quarto-table-cell-role="th">drinks</th>
+<th data-quarto-table-cell-role="th">drugs</th>
+<th data-quarto-table-cell-role="th">education</th>
+<th data-quarto-table-cell-role="th">ethnicity</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">last_online</th>
+<th data-quarto-table-cell-role="th">location</th>
+<th data-quarto-table-cell-role="th">offspring</th>
+<th data-quarto-table-cell-role="th">pets</th>
+<th data-quarto-table-cell-role="th">religion</th>
+<th data-quarto-table-cell-role="th">sign</th>
+<th data-quarto-table-cell-role="th">smokes</th>
+<th data-quarto-table-cell-role="th">speaks</th>
+<th data-quarto-table-cell-role="th">height_cm</th>
+<th data-quarto-table-cell-role="th">speaks first</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>32</td>
+<td>single</td>
+<td>f</td>
+<td>straight</td>
+<td>fit</td>
+<td>strictly anything</td>
+<td>socially</td>
+<td>never</td>
+<td>graduated from college/university</td>
+<td>white, other</td>
+<td>...</td>
+<td>2012-06-25-20-45</td>
+<td>san francisco, california</td>
+<td>NaN</td>
+<td>likes dogs and likes cats</td>
+<td>NaN</td>
+<td>virgo</td>
+<td>NaN</td>
+<td>english</td>
+<td>165.10</td>
+<td>english</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>31</td>
+<td>single</td>
+<td>f</td>
+<td>straight</td>
+<td>average</td>
+<td>mostly anything</td>
+<td>socially</td>
+<td>never</td>
+<td>graduated from college/university</td>
+<td>white</td>
+<td>...</td>
+<td>2012-06-29-12-30</td>
+<td>san francisco, california</td>
+<td>doesn't have kids, but wants them</td>
+<td>likes dogs and likes cats</td>
+<td>christianity</td>
+<td>sagittarius</td>
+<td>no</td>
+<td>english, spanish (okay)</td>
+<td>165.10</td>
+<td>english</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>24</td>
+<td>single</td>
+<td>f</td>
+<td>straight</td>
+<td>NaN</td>
+<td>strictly anything</td>
+<td>socially</td>
+<td>NaN</td>
+<td>graduated from college/university</td>
+<td>white</td>
+<td>...</td>
+<td>2012-06-29-23-39</td>
+<td>belvedere tiburon, california</td>
+<td>doesn't have kids</td>
+<td>likes dogs and likes cats</td>
+<td>christianity but not too serious about it</td>
+<td>gemini but it doesn&amp;rsquo;t matter</td>
+<td>when drinking</td>
+<td>english</td>
+<td>170.18</td>
+<td>english</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">13</td>
+<td>30</td>
+<td>single</td>
+<td>f</td>
+<td>straight</td>
+<td>skinny</td>
+<td>mostly anything</td>
+<td>socially</td>
+<td>never</td>
+<td>graduated from high school</td>
+<td>white</td>
+<td>...</td>
+<td>2012-06-13-16-06</td>
+<td>san francisco, california</td>
+<td>NaN</td>
+<td>has dogs and likes cats</td>
+<td>christianity but not too serious about it</td>
+<td>NaN</td>
+<td>no</td>
+<td>english</td>
+<td>167.64</td>
+<td>english</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">14</td>
+<td>29</td>
+<td>single</td>
+<td>f</td>
+<td>straight</td>
+<td>thin</td>
+<td>mostly anything</td>
+<td>socially</td>
+<td>never</td>
+<td>working on college/university</td>
+<td>hispanic / latin, white</td>
+<td>...</td>
+<td>2012-06-29-08-55</td>
+<td>san leandro, california</td>
+<td>doesn't have kids, but wants them</td>
+<td>likes dogs and has cats</td>
+<td>catholicism</td>
+<td>taurus</td>
+<td>no</td>
+<td>english</td>
+<td>157.48</td>
+<td>english</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">9995</td>
+<td>24</td>
+<td>single</td>
+<td>f</td>
+<td>straight</td>
+<td>curvy</td>
+<td>anything</td>
+<td>socially</td>
+<td>never</td>
+<td>graduated from two-year college</td>
+<td>black</td>
+<td>...</td>
+<td>2012-01-16-23-10</td>
+<td>burlingame, california</td>
+<td>has a kid</td>
+<td>likes dogs and likes cats</td>
+<td>christianity and very serious about it</td>
+<td>libra but it doesn&amp;rsquo;t matter</td>
+<td>when drinking</td>
+<td>english</td>
+<td>167.64</td>
+<td>english</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9996</td>
+<td>24</td>
+<td>single</td>
+<td>f</td>
+<td>straight</td>
+<td>skinny</td>
+<td>NaN</td>
+<td>socially</td>
+<td>never</td>
+<td>graduated from college/university</td>
+<td>asian</td>
+<td>...</td>
+<td>2012-06-30-02-24</td>
+<td>san francisco, california</td>
+<td>doesn't have kids</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>virgo</td>
+<td>no</td>
+<td>english, chinese</td>
+<td>149.86</td>
+<td>english</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">9997</td>
+<td>19</td>
+<td>seeing someone</td>
+<td>f</td>
+<td>bisexual</td>
+<td>athletic</td>
+<td>NaN</td>
+<td>rarely</td>
+<td>never</td>
+<td>NaN</td>
+<td>pacific islander, white, other</td>
+<td>...</td>
+<td>2012-03-08-13-08</td>
+<td>martinez, california</td>
+<td>NaN</td>
+<td>has dogs and has cats</td>
+<td>NaN</td>
+<td>aquarius but it doesn&amp;rsquo;t matter</td>
+<td>sometimes</td>
+<td>english</td>
+<td>154.94</td>
+<td>english</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9998</td>
+<td>47</td>
+<td>single</td>
+<td>f</td>
+<td>straight</td>
+<td>a little extra</td>
+<td>NaN</td>
+<td>rarely</td>
+<td>never</td>
+<td>NaN</td>
+<td>black</td>
+<td>...</td>
+<td>2012-06-30-06-12</td>
+<td>emeryville, california</td>
+<td>NaN</td>
+<td>likes dogs and likes cats</td>
+<td>other</td>
+<td>scorpio and it&amp;rsquo;s fun to think about</td>
+<td>no</td>
+<td>english</td>
+<td>162.56</td>
+<td>english</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">9999</td>
+<td>29</td>
+<td>single</td>
+<td>f</td>
+<td>straight</td>
+<td>NaN</td>
+<td>mostly vegan</td>
+<td>socially</td>
+<td>NaN</td>
+<td>graduated from college/university</td>
+<td>white</td>
+<td>...</td>
+<td>2012-06-03-23-30</td>
+<td>san francisco, california</td>
+<td>doesn't have kids, but might want them</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>leo</td>
+<td>no</td>
+<td>english, spanish</td>
+<td>172.72</td>
+<td>english</td>
+</tr>
+</tbody>
+</table>
+
+<p>4055 rows × 23 columns</p>
+</div>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="summary-statistics" class="level2" data-number="1.8">
 <h2 data-number="1.8" class="anchored" data-anchor-id="summary-statistics"><span class="header-section-number">1.8</span> Summary statistics</h2>
 <section id="a-useful-method-that-generates-various-summary-statistics-is-.describe." class="level3" data-number="1.8.1">
 <h3 data-number="1.8.1" class="anchored" data-anchor-id="a-useful-method-that-generates-various-summary-statistics-is-.describe."><span class="header-section-number">1.8.1</span> A useful method that generates various summary statistics is <code>.describe()</code>.</h3>
-<div id="cell-43" class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a><span class="co"># get summary statistics</span></span>
-<span id="cb34-2"><a href="#cb34-2"></a>okcupid_df.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<div id="cell-46" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1"></a><span class="co"># get summary statistics</span></span>
+<span id="cb35-2"><a href="#cb35-2"></a>okcupid_df.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="22">
 <div>
 <div>
 
@@ -1855,10 +2170,10 @@ Name: speaks first, Length: 10000, dtype: object</code></pre>
 </div>
 </div>
 <p>The summary statistics are based on non-missing values and count reflects that. The values depend on what it’s called on. If the DataFrame includes both numeric and object (e.g., strings) dtypes, it will default to summarizing the numeric data. If .describe() is called on strings, for example, it will return the count, number of unique values, and the most frequent value along with its count.</p>
-<div id="cell-45" class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1"></a><span class="co"># describe can be used on a single column</span></span>
-<span id="cb35-2"><a href="#cb35-2"></a>okcupid_df[<span class="st">'income'</span>].describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<div id="cell-48" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1"></a><span class="co"># describe can be used on a single column</span></span>
+<span id="cb36-2"><a href="#cb36-2"></a>okcupid_df[<span class="st">'income'</span>].describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="23">
 <pre><code>count      10000.000000
 mean       19307.189900
 std        93842.703841
@@ -1870,10 +2185,10 @@ max      1000000.000000
 Name: income, dtype: float64</code></pre>
 </div>
 </div>
-<div id="cell-46" class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1"></a><span class="co"># and on non-numerical data  </span></span>
-<span id="cb37-2"><a href="#cb37-2"></a>okcupid_df[<span class="st">'sex'</span>].describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<div id="cell-49" class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1"></a><span class="co"># and on non-numerical data  </span></span>
+<span id="cb38-2"><a href="#cb38-2"></a>okcupid_df[<span class="st">'sex'</span>].describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="24">
 <pre><code>count     10000
 unique        2
 top           m
@@ -1887,17 +2202,17 @@ Name: sex, dtype: object</code></pre>
 <h2 data-number="1.9" class="anchored" data-anchor-id="manipulating-data"><span class="header-section-number">1.9</span> Manipulating Data</h2>
 <section id="lets-seperate-the-data-based-on-sex" class="level3" data-number="1.9.1">
 <h3 data-number="1.9.1" class="anchored" data-anchor-id="lets-seperate-the-data-based-on-sex"><span class="header-section-number">1.9.1</span> Let’s seperate the data based on sex</h3>
-<div id="cell-49" class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1"></a><span class="co"># male users</span></span>
-<span id="cb39-2"><a href="#cb39-2"></a>males<span class="op">=</span>okcupid_df[okcupid_df[<span class="st">"sex"</span>]<span class="op">==</span><span class="st">"m"</span>] </span>
-<span id="cb39-3"><a href="#cb39-3"></a></span>
-<span id="cb39-4"><a href="#cb39-4"></a><span class="co"># female users</span></span>
-<span id="cb39-5"><a href="#cb39-5"></a>females<span class="op">=</span>okcupid_df[okcupid_df[<span class="st">"sex"</span>]<span class="op">==</span><span class="st">"f"</span>] </span>
-<span id="cb39-6"><a href="#cb39-6"></a></span>
-<span id="cb39-7"><a href="#cb39-7"></a><span class="co"># how many users are male and how many are female?</span></span>
-<span id="cb39-8"><a href="#cb39-8"></a><span class="bu">print</span>(<span class="st">"</span><span class="sc">{}</span><span class="st"> males (</span><span class="sc">{:.1%}</span><span class="st">), </span><span class="sc">{}</span><span class="st"> females (</span><span class="sc">{:.1%}</span><span class="st">)"</span>.<span class="bu">format</span>(</span>
-<span id="cb39-9"><a href="#cb39-9"></a>    <span class="bu">len</span>(males),<span class="bu">len</span>(males)<span class="op">/</span><span class="bu">len</span>(okcupid_df),</span>
-<span id="cb39-10"><a href="#cb39-10"></a>    <span class="bu">len</span>(females),<span class="bu">len</span>(females)<span class="op">/</span><span class="bu">len</span>(okcupid_df)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-52" class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1"></a><span class="co"># male users</span></span>
+<span id="cb40-2"><a href="#cb40-2"></a>males<span class="op">=</span>okcupid_df[okcupid_df[<span class="st">"sex"</span>]<span class="op">==</span><span class="st">"m"</span>] </span>
+<span id="cb40-3"><a href="#cb40-3"></a></span>
+<span id="cb40-4"><a href="#cb40-4"></a><span class="co"># female users</span></span>
+<span id="cb40-5"><a href="#cb40-5"></a>females<span class="op">=</span>okcupid_df[okcupid_df[<span class="st">"sex"</span>]<span class="op">==</span><span class="st">"f"</span>] </span>
+<span id="cb40-6"><a href="#cb40-6"></a></span>
+<span id="cb40-7"><a href="#cb40-7"></a><span class="co"># how many users are male and how many are female?</span></span>
+<span id="cb40-8"><a href="#cb40-8"></a><span class="bu">print</span>(<span class="st">"</span><span class="sc">{}</span><span class="st"> males (</span><span class="sc">{:.1%}</span><span class="st">), </span><span class="sc">{}</span><span class="st"> females (</span><span class="sc">{:.1%}</span><span class="st">)"</span>.<span class="bu">format</span>(</span>
+<span id="cb40-9"><a href="#cb40-9"></a>    <span class="bu">len</span>(males),<span class="bu">len</span>(males)<span class="op">/</span><span class="bu">len</span>(okcupid_df),</span>
+<span id="cb40-10"><a href="#cb40-10"></a>    <span class="bu">len</span>(females),<span class="bu">len</span>(females)<span class="op">/</span><span class="bu">len</span>(okcupid_df)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>5944 males (59.4%), 4056 females (40.6%)</code></pre>
 </div>
@@ -1905,10 +2220,10 @@ Name: sex, dtype: object</code></pre>
 </section>
 <section id="lets-examine-the-age-distribution" class="level3" data-number="1.9.2">
 <h3 data-number="1.9.2" class="anchored" data-anchor-id="lets-examine-the-age-distribution"><span class="header-section-number">1.9.2</span> Let’s examine the age distribution</h3>
-<div id="cell-51" class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1"></a><span class="co"># summary statistics on the 'age' column</span></span>
-<span id="cb41-2"><a href="#cb41-2"></a>okcupid_df[<span class="st">'age'</span>].describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<div id="cell-54" class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1"></a><span class="co"># summary statistics on the 'age' column</span></span>
+<span id="cb42-2"><a href="#cb42-2"></a>okcupid_df[<span class="st">'age'</span>].describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="26">
 <pre><code>count    10000.000000
 mean        32.073500
 std          9.444025
@@ -1920,26 +2235,26 @@ max        110.000000
 Name: age, dtype: float64</code></pre>
 </div>
 </div>
-<div id="cell-52" class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1"></a><span class="co"># how many users are older than 80?</span></span>
-<span id="cb43-2"><a href="#cb43-2"></a>(okcupid_df[<span class="st">"age"</span>]<span class="op">&gt;</span><span class="dv">80</span>).<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<div id="cell-55" class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1"></a><span class="co"># how many users are older than 80?</span></span>
+<span id="cb44-2"><a href="#cb44-2"></a>(okcupid_df[<span class="st">"age"</span>]<span class="op">&gt;</span><span class="dv">80</span>).<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="27">
 <pre><code>1</code></pre>
 </div>
 </div>
-<div id="cell-53" class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1"></a><span class="co"># can also be written this way</span></span>
-<span id="cb45-2"><a href="#cb45-2"></a><span class="bu">sum</span>(okcupid_df[<span class="st">'age'</span>]<span class="op">&gt;</span><span class="dv">80</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<div id="cell-56" class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1"></a><span class="co"># can also be written this way</span></span>
+<span id="cb46-2"><a href="#cb46-2"></a><span class="bu">sum</span>(okcupid_df[<span class="st">'age'</span>]<span class="op">&gt;</span><span class="dv">80</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="28">
 <pre><code>1</code></pre>
 </div>
 </div>
 </section>
 <section id="who-are-the-age-outliers" class="level3" data-number="1.9.3">
 <h3 data-number="1.9.3" class="anchored" data-anchor-id="who-are-the-age-outliers"><span class="header-section-number">1.9.3</span> Who are the age outliers?</h3>
-<div id="cell-55" class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1"></a>okcupid_df[okcupid_df[<span class="st">"age"</span>]<span class="op">&gt;</span><span class="dv">80</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<div id="cell-58" class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1"></a>okcupid_df[okcupid_df[<span class="st">"age"</span>]<span class="op">&gt;</span><span class="dv">80</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="29">
 <div>
 <div>
 
@@ -2005,14 +2320,14 @@ Name: age, dtype: float64</code></pre>
 </div>
 </div>
 <p>Let’s assume the 110-year-old lady and the athletic 109-year-old gentleman (who’s working on a masters program) are outliers: we get rid of them so the following plots look better. They didn’t say much else about themselves, anyway.</p>
-<div id="cell-57" class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1"></a><span class="co"># eliminate users with age &gt;= 80</span></span>
-<span id="cb48-2"><a href="#cb48-2"></a>okcupid_df<span class="op">=</span>okcupid_df[okcupid_df[<span class="st">"age"</span>]<span class="op">&lt;=</span><span class="dv">80</span>] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-60" class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1"></a><span class="co"># eliminate users with age &gt;= 80</span></span>
+<span id="cb49-2"><a href="#cb49-2"></a>okcupid_df<span class="op">=</span>okcupid_df[okcupid_df[<span class="st">"age"</span>]<span class="op">&lt;=</span><span class="dv">80</span>] </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Is the age distribution for men different than that for women?</p>
-<div id="cell-59" class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1"></a><span class="bu">print</span>(<span class="st">"Mean and median age for males:   </span><span class="sc">{:.2f}</span><span class="st">, </span><span class="sc">{:.2f}</span><span class="st">"</span>.<span class="bu">format</span>(males[<span class="st">"age"</span>].mean(),males[<span class="st">"age"</span>].median()))</span>
-<span id="cb49-2"><a href="#cb49-2"></a><span class="bu">print</span>(<span class="st">"Mean and median age for females: </span><span class="sc">{:.2f}</span><span class="st">, </span><span class="sc">{:.2f}</span><span class="st">"</span>.<span class="bu">format</span>(females[<span class="st">"age"</span>].mean(),females[<span class="st">"age"</span>].median()))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-62" class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1"></a><span class="bu">print</span>(<span class="st">"Mean and median age for males:   </span><span class="sc">{:.2f}</span><span class="st">, </span><span class="sc">{:.2f}</span><span class="st">"</span>.<span class="bu">format</span>(males[<span class="st">"age"</span>].mean(),males[<span class="st">"age"</span>].median()))</span>
+<span id="cb50-2"><a href="#cb50-2"></a><span class="bu">print</span>(<span class="st">"Mean and median age for females: </span><span class="sc">{:.2f}</span><span class="st">, </span><span class="sc">{:.2f}</span><span class="st">"</span>.<span class="bu">format</span>(females[<span class="st">"age"</span>].mean(),females[<span class="st">"age"</span>].median()))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Mean and median age for males:   31.75, 30.00
 Mean and median age for females: 32.55, 30.00</code></pre>
@@ -2021,37 +2336,37 @@ Mean and median age for females: 32.55, 30.00</code></pre>
 </section>
 <section id="we-can-also-plot-the-data-dont-worry-if-you-dont-understand-the-code" class="level3" data-number="1.9.4">
 <h3 data-number="1.9.4" class="anchored" data-anchor-id="we-can-also-plot-the-data-dont-worry-if-you-dont-understand-the-code"><span class="header-section-number">1.9.4</span> We can also plot the data (don’t worry if you don’t understand the code)</h3>
-<div id="cell-61" class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1"></a><span class="co"># add plotting libraries to notebook</span></span>
-<span id="cb51-2"><a href="#cb51-2"></a><span class="op">%</span>matplotlib inline</span>
-<span id="cb51-3"><a href="#cb51-3"></a><span class="op">%</span>config InlineBackend.figure_format<span class="op">=</span><span class="st">'svg'</span></span>
-<span id="cb51-4"><a href="#cb51-4"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb51-5"><a href="#cb51-5"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb51-6"><a href="#cb51-6"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb51-7"><a href="#cb51-7"></a>sns.set_style(<span class="st">"ticks"</span>)</span>
-<span id="cb51-8"><a href="#cb51-8"></a>sns.set_context(context<span class="op">=</span><span class="st">"notebook"</span>,font_scale<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-64" class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1"></a><span class="co"># add plotting libraries to notebook</span></span>
+<span id="cb52-2"><a href="#cb52-2"></a><span class="op">%</span>matplotlib inline</span>
+<span id="cb52-3"><a href="#cb52-3"></a><span class="op">%</span>config InlineBackend.figure_format<span class="op">=</span><span class="st">'svg'</span></span>
+<span id="cb52-4"><a href="#cb52-4"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb52-5"><a href="#cb52-5"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb52-6"><a href="#cb52-6"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb52-7"><a href="#cb52-7"></a>sns.set_style(<span class="st">"ticks"</span>)</span>
+<span id="cb52-8"><a href="#cb52-8"></a>sns.set_context(context<span class="op">=</span><span class="st">"notebook"</span>,font_scale<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-62" class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1"></a><span class="co"># draw age histograms for male and female users</span></span>
-<span id="cb52-2"><a href="#cb52-2"></a>fig,(ax1,ax2) <span class="op">=</span> plt.subplots(ncols<span class="op">=</span><span class="dv">2</span>,figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">3</span>),sharey<span class="op">=</span><span class="va">True</span>,sharex<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb52-3"><a href="#cb52-3"></a>sns.histplot(males[<span class="st">"age"</span>], ax<span class="op">=</span>ax1,</span>
-<span id="cb52-4"><a href="#cb52-4"></a>             bins<span class="op">=</span><span class="bu">range</span>(okcupid_df[<span class="st">"age"</span>].<span class="bu">min</span>(),okcupid_df[<span class="st">"age"</span>].<span class="bu">max</span>()),</span>
-<span id="cb52-5"><a href="#cb52-5"></a>             kde<span class="op">=</span><span class="va">False</span>,</span>
-<span id="cb52-6"><a href="#cb52-6"></a>             color<span class="op">=</span><span class="st">"b"</span>)</span>
-<span id="cb52-7"><a href="#cb52-7"></a>ax1.set_title(<span class="st">"Age distribution for males"</span>)</span>
-<span id="cb52-8"><a href="#cb52-8"></a>sns.histplot(females[<span class="st">"age"</span>], ax<span class="op">=</span>ax2,</span>
-<span id="cb52-9"><a href="#cb52-9"></a>             bins<span class="op">=</span><span class="bu">range</span>(okcupid_df[<span class="st">"age"</span>].<span class="bu">min</span>(),okcupid_df[<span class="st">"age"</span>].<span class="bu">max</span>()),</span>
-<span id="cb52-10"><a href="#cb52-10"></a>             kde<span class="op">=</span><span class="va">False</span>,</span>
-<span id="cb52-11"><a href="#cb52-11"></a>             color<span class="op">=</span><span class="st">"r"</span>)</span>
-<span id="cb52-12"><a href="#cb52-12"></a>ax2.set_title(<span class="st">"Age distribution for females"</span>)</span>
-<span id="cb52-13"><a href="#cb52-13"></a>ax1.set_ylabel(<span class="st">"Number of users in age group"</span>)</span>
-<span id="cb52-14"><a href="#cb52-14"></a><span class="cf">for</span> ax <span class="kw">in</span> (ax1,ax2):</span>
-<span id="cb52-15"><a href="#cb52-15"></a>    sns.despine(ax<span class="op">=</span>ax)</span>
-<span id="cb52-16"><a href="#cb52-16"></a>fig.tight_layout()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-65" class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1"></a><span class="co"># draw age histograms for male and female users</span></span>
+<span id="cb53-2"><a href="#cb53-2"></a>fig,(ax1,ax2) <span class="op">=</span> plt.subplots(ncols<span class="op">=</span><span class="dv">2</span>,figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">3</span>),sharey<span class="op">=</span><span class="va">True</span>,sharex<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb53-3"><a href="#cb53-3"></a>sns.histplot(males[<span class="st">"age"</span>], ax<span class="op">=</span>ax1,</span>
+<span id="cb53-4"><a href="#cb53-4"></a>             bins<span class="op">=</span><span class="bu">range</span>(okcupid_df[<span class="st">"age"</span>].<span class="bu">min</span>(),okcupid_df[<span class="st">"age"</span>].<span class="bu">max</span>()),</span>
+<span id="cb53-5"><a href="#cb53-5"></a>             kde<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb53-6"><a href="#cb53-6"></a>             color<span class="op">=</span><span class="st">"b"</span>)</span>
+<span id="cb53-7"><a href="#cb53-7"></a>ax1.set_title(<span class="st">"Age distribution for males"</span>)</span>
+<span id="cb53-8"><a href="#cb53-8"></a>sns.histplot(females[<span class="st">"age"</span>], ax<span class="op">=</span>ax2,</span>
+<span id="cb53-9"><a href="#cb53-9"></a>             bins<span class="op">=</span><span class="bu">range</span>(okcupid_df[<span class="st">"age"</span>].<span class="bu">min</span>(),okcupid_df[<span class="st">"age"</span>].<span class="bu">max</span>()),</span>
+<span id="cb53-10"><a href="#cb53-10"></a>             kde<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb53-11"><a href="#cb53-11"></a>             color<span class="op">=</span><span class="st">"r"</span>)</span>
+<span id="cb53-12"><a href="#cb53-12"></a>ax2.set_title(<span class="st">"Age distribution for females"</span>)</span>
+<span id="cb53-13"><a href="#cb53-13"></a>ax1.set_ylabel(<span class="st">"Number of users in age group"</span>)</span>
+<span id="cb53-14"><a href="#cb53-14"></a><span class="cf">for</span> ax <span class="kw">in</span> (ax1,ax2):</span>
+<span id="cb53-15"><a href="#cb53-15"></a>    sns.despine(ax<span class="op">=</span>ax)</span>
+<span id="cb53-16"><a href="#cb53-16"></a>fig.tight_layout()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="tutorial_1_files/figure-html/cell-34-output-1.svg" class="img-fluid figure-img"></p>
+<p><img src="tutorial_1_files/figure-html/cell-35-output-1.svg" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -2059,38 +2374,45 @@ Mean and median age for females: 32.55, 30.00</code></pre>
 </section>
 <section id="now-lets-study-height-distribution-and-compare-with-official-data-from-the-us-centers-of-disease-control-and-prevention" class="level3" data-number="1.9.5">
 <h3 data-number="1.9.5" class="anchored" data-anchor-id="now-lets-study-height-distribution-and-compare-with-official-data-from-the-us-centers-of-disease-control-and-prevention"><span class="header-section-number">1.9.5</span> Now let’s study height distribution and compare with official data from the US Centers of Disease Control and Prevention</h3>
-<div id="cell-64" class="cell">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1"></a>fig,(ax,ax2) <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">2</span>,sharex<span class="op">=</span><span class="va">True</span>,figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">6</span>),gridspec_kw<span class="op">=</span>{<span class="st">'height_ratios'</span>:[<span class="dv">2</span>,<span class="dv">1</span>]})</span>
-<span id="cb53-2"><a href="#cb53-2"></a></span>
-<span id="cb53-3"><a href="#cb53-3"></a><span class="co"># Plot histograms of height</span></span>
-<span id="cb53-4"><a href="#cb53-4"></a>bins<span class="op">=</span><span class="bu">range</span>(<span class="dv">55</span>,<span class="dv">80</span>)</span>
-<span id="cb53-5"><a href="#cb53-5"></a>sns.histplot(males[<span class="st">"height_inches"</span>].dropna(), ax<span class="op">=</span>ax,</span>
-<span id="cb53-6"><a href="#cb53-6"></a>             bins<span class="op">=</span>bins,</span>
-<span id="cb53-7"><a href="#cb53-7"></a>             kde<span class="op">=</span><span class="va">False</span>,</span>
-<span id="cb53-8"><a href="#cb53-8"></a>             color<span class="op">=</span><span class="st">"b"</span>,</span>
-<span id="cb53-9"><a href="#cb53-9"></a>             label<span class="op">=</span><span class="st">"males"</span>)</span>
-<span id="cb53-10"><a href="#cb53-10"></a>sns.histplot(females[<span class="st">"height_inches"</span>].dropna(), ax<span class="op">=</span>ax,</span>
-<span id="cb53-11"><a href="#cb53-11"></a>             bins<span class="op">=</span>bins,</span>
-<span id="cb53-12"><a href="#cb53-12"></a>             kde<span class="op">=</span><span class="va">False</span>,</span>
-<span id="cb53-13"><a href="#cb53-13"></a>             color<span class="op">=</span><span class="st">"r"</span>,</span>
-<span id="cb53-14"><a href="#cb53-14"></a>             label<span class="op">=</span><span class="st">"females"</span>)</span>
-<span id="cb53-15"><a href="#cb53-15"></a>ax.legend(loc<span class="op">=</span><span class="st">"upper left"</span>)</span>
-<span id="cb53-16"><a href="#cb53-16"></a>ax.set_xlabel(<span class="st">""</span>)</span>
-<span id="cb53-17"><a href="#cb53-17"></a>ax.set_ylabel(<span class="st">"Number of users with given height"</span>)</span>
-<span id="cb53-18"><a href="#cb53-18"></a>ax.set_title(<span class="st">"height distribution of male and female users"</span>)<span class="op">;</span></span>
-<span id="cb53-19"><a href="#cb53-19"></a></span>
-<span id="cb53-20"><a href="#cb53-20"></a><span class="co"># Make aligned boxplots</span></span>
-<span id="cb53-21"><a href="#cb53-21"></a>sns.boxplot(data<span class="op">=</span>okcupid_df,y<span class="op">=</span><span class="st">"sex"</span>,x<span class="op">=</span><span class="st">"height_inches"</span>,orient<span class="op">=</span><span class="st">"h"</span>,ax<span class="op">=</span>ax2,palette<span class="op">=</span>{<span class="st">"m"</span>:<span class="st">"b"</span>,<span class="st">"f"</span>:<span class="st">"r"</span>})</span>
-<span id="cb53-22"><a href="#cb53-22"></a>plt.setp(ax2.artists, alpha<span class="op">=</span><span class="fl">.5</span>)</span>
-<span id="cb53-23"><a href="#cb53-23"></a>ax2.set_xlim([<span class="bu">min</span>(bins),<span class="bu">max</span>(bins)])</span>
-<span id="cb53-24"><a href="#cb53-24"></a>ax2.set_xlabel(<span class="st">"Self-reported height [inches]"</span>)</span>
-<span id="cb53-25"><a href="#cb53-25"></a></span>
-<span id="cb53-26"><a href="#cb53-26"></a>sns.despine(ax<span class="op">=</span>ax)</span>
-<span id="cb53-27"><a href="#cb53-27"></a>fig.tight_layout()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-67" class="cell" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1"></a>fig,(ax,ax2) <span class="op">=</span> plt.subplots(nrows<span class="op">=</span><span class="dv">2</span>,sharex<span class="op">=</span><span class="va">True</span>,figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">6</span>),gridspec_kw<span class="op">=</span>{<span class="st">'height_ratios'</span>:[<span class="dv">2</span>,<span class="dv">1</span>]})</span>
+<span id="cb54-2"><a href="#cb54-2"></a></span>
+<span id="cb54-3"><a href="#cb54-3"></a><span class="co"># Plot histograms of height</span></span>
+<span id="cb54-4"><a href="#cb54-4"></a>bins<span class="op">=</span><span class="bu">range</span>(<span class="dv">55</span>,<span class="dv">80</span>)</span>
+<span id="cb54-5"><a href="#cb54-5"></a>sns.histplot(males[<span class="st">"height_inches"</span>].dropna(), ax<span class="op">=</span>ax,</span>
+<span id="cb54-6"><a href="#cb54-6"></a>             bins<span class="op">=</span>bins,</span>
+<span id="cb54-7"><a href="#cb54-7"></a>             kde<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb54-8"><a href="#cb54-8"></a>             color<span class="op">=</span><span class="st">"b"</span>,</span>
+<span id="cb54-9"><a href="#cb54-9"></a>             label<span class="op">=</span><span class="st">"males"</span>)</span>
+<span id="cb54-10"><a href="#cb54-10"></a>sns.histplot(females[<span class="st">"height_inches"</span>].dropna(), ax<span class="op">=</span>ax,</span>
+<span id="cb54-11"><a href="#cb54-11"></a>             bins<span class="op">=</span>bins,</span>
+<span id="cb54-12"><a href="#cb54-12"></a>             kde<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb54-13"><a href="#cb54-13"></a>             color<span class="op">=</span><span class="st">"r"</span>,</span>
+<span id="cb54-14"><a href="#cb54-14"></a>             label<span class="op">=</span><span class="st">"females"</span>)</span>
+<span id="cb54-15"><a href="#cb54-15"></a>ax.legend(loc<span class="op">=</span><span class="st">"upper left"</span>)</span>
+<span id="cb54-16"><a href="#cb54-16"></a>ax.set_xlabel(<span class="st">""</span>)</span>
+<span id="cb54-17"><a href="#cb54-17"></a>ax.set_ylabel(<span class="st">"Number of users with given height"</span>)</span>
+<span id="cb54-18"><a href="#cb54-18"></a>ax.set_title(<span class="st">"height distribution of male and female users"</span>)<span class="op">;</span></span>
+<span id="cb54-19"><a href="#cb54-19"></a></span>
+<span id="cb54-20"><a href="#cb54-20"></a><span class="co"># Make aligned boxplots</span></span>
+<span id="cb54-21"><a href="#cb54-21"></a>sns.boxplot(data<span class="op">=</span>okcupid_df,y<span class="op">=</span><span class="st">"sex"</span>,x<span class="op">=</span><span class="st">"height_inches"</span>,orient<span class="op">=</span><span class="st">"h"</span>,ax<span class="op">=</span>ax2,palette<span class="op">=</span>{<span class="st">"m"</span>:<span class="st">"b"</span>,<span class="st">"f"</span>:<span class="st">"r"</span>})</span>
+<span id="cb54-22"><a href="#cb54-22"></a>plt.setp(ax2.artists, alpha<span class="op">=</span><span class="fl">.5</span>)</span>
+<span id="cb54-23"><a href="#cb54-23"></a>ax2.set_xlim([<span class="bu">min</span>(bins),<span class="bu">max</span>(bins)])</span>
+<span id="cb54-24"><a href="#cb54-24"></a>ax2.set_xlabel(<span class="st">"Self-reported height [inches]"</span>)</span>
+<span id="cb54-25"><a href="#cb54-25"></a></span>
+<span id="cb54-26"><a href="#cb54-26"></a>sns.despine(ax<span class="op">=</span>ax)</span>
+<span id="cb54-27"><a href="#cb54-27"></a>fig.tight_layout()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/var/folders/wn/2bz1970d2w5182zy7h96yfcc0000gn/T/ipykernel_35920/2199488932.py:21: FutureWarning: 
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.boxplot(data=okcupid_df,y="sex",x="height_inches",orient="h",ax=ax2,palette={"m":"b","f":"r"})</code></pre>
+</div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="tutorial_1_files/figure-html/cell-35-output-1.svg" class="img-fluid figure-img"></p>
+<p><img src="tutorial_1_files/figure-html/cell-36-output-2.svg" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -2101,13 +2423,13 @@ Mean and median age for females: 32.55, 30.00</code></pre>
 <h3 data-number="1.9.6" class="anchored" data-anchor-id="how-do-okcupid-users-heights-compare-to-the-general-population"><span class="header-section-number">1.9.6</span> How do OkCupid user’s heights compare to the general population?</h3>
 <p>How does this compare with general population data? Are OkCupid users maybe cheating and overreporting their height?</p>
 <p>The CDC publishes growth charts, which contain height data for the general US population. The dataset reports statistics (3rd, 5th, 10th, 25th, 50th, 75th, 90th, 95th, 97th percentiles) for stature for different ages from 2 to 20 years. This (and more) data is plotted by the CDC in these beautiful charts (https://www.cdc.gov/growthcharts/data/set2clinical/set2color.pdf).</p>
-<div id="cell-66" class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1"></a><span class="co"># Import a CSV file for growth chart data</span></span>
-<span id="cb54-2"><a href="#cb54-2"></a>cdc<span class="op">=</span>pd.read_csv(<span class="st">"https://www.cdc.gov/growthcharts/data/zscore/statage.csv"</span>)</span>
-<span id="cb54-3"><a href="#cb54-3"></a></span>
-<span id="cb54-4"><a href="#cb54-4"></a><span class="co"># print first ten rows of data</span></span>
-<span id="cb54-5"><a href="#cb54-5"></a>cdc.head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<div id="cell-69" class="cell" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1"></a><span class="co"># Import a CSV file for growth chart data</span></span>
+<span id="cb56-2"><a href="#cb56-2"></a>cdc<span class="op">=</span>pd.read_csv(<span class="st">"https://www.cdc.gov/growthcharts/data/zscore/statage.csv"</span>)</span>
+<span id="cb56-3"><a href="#cb56-3"></a></span>
+<span id="cb56-4"><a href="#cb56-4"></a><span class="co"># print first ten rows of data</span></span>
+<span id="cb56-5"><a href="#cb56-5"></a>cdc.head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="35">
 <div>
 <div>
 
@@ -2310,23 +2632,23 @@ Mean and median age for females: 32.55, 30.00</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-67" class="cell">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1"></a><span class="co"># Adjust the data to fit our format</span></span>
-<span id="cb55-2"><a href="#cb55-2"></a>cdc[<span class="st">"Age"</span>]<span class="op">=</span>cdc[<span class="st">"Agemos"</span>]<span class="op">/</span><span class="dv">12</span> <span class="co"># convert age in months to age in fractional years</span></span>
-<span id="cb55-3"><a href="#cb55-3"></a>cdc[<span class="st">"Sex"</span>]<span class="op">=</span>cdc[<span class="st">"Sex"</span>].replace({<span class="dv">1</span>:<span class="st">"male"</span>,<span class="dv">2</span>:<span class="st">"female"</span>}) <span class="co"># align to our convention</span></span>
-<span id="cb55-4"><a href="#cb55-4"></a></span>
-<span id="cb55-5"><a href="#cb55-5"></a><span class="co"># group the data into percentiles</span></span>
-<span id="cb55-6"><a href="#cb55-6"></a>percentiles<span class="op">=</span>[<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">10</span>,<span class="dv">25</span>,<span class="dv">50</span>,<span class="dv">75</span>,<span class="dv">90</span>,<span class="dv">95</span>,<span class="dv">97</span>]</span>
-<span id="cb55-7"><a href="#cb55-7"></a>percentile_columns<span class="op">=</span>[<span class="st">"P"</span><span class="op">+</span><span class="bu">str</span>(p) <span class="cf">for</span> p <span class="kw">in</span> percentiles] <span class="co"># names of percentile columns</span></span>
-<span id="cb55-8"><a href="#cb55-8"></a>cdc[percentile_columns]<span class="op">=</span>cdc[percentile_columns]<span class="op">*</span><span class="fl">0.393701</span> <span class="co"># convert percentile columns from centimeters to inches (ugh)</span></span>
-<span id="cb55-9"><a href="#cb55-9"></a>cdc20<span class="op">=</span>cdc[cdc[<span class="st">"Age"</span>]<span class="op">==</span><span class="dv">20</span>].set_index(<span class="st">"Sex"</span>) <span class="co"># Select the two rows corresponding to 20-year-olds (males and females)</span></span>
-<span id="cb55-10"><a href="#cb55-10"></a></span>
-<span id="cb55-11"><a href="#cb55-11"></a><span class="bu">print</span>(<span class="st">"Height Percentiles for 20-year-old US population [inches]"</span>)</span>
-<span id="cb55-12"><a href="#cb55-12"></a>cdc20[percentile_columns]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-70" class="cell" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1"></a><span class="co"># Adjust the data to fit our format</span></span>
+<span id="cb57-2"><a href="#cb57-2"></a>cdc[<span class="st">"Age"</span>]<span class="op">=</span>cdc[<span class="st">"Agemos"</span>]<span class="op">/</span><span class="dv">12</span> <span class="co"># convert age in months to age in fractional years</span></span>
+<span id="cb57-3"><a href="#cb57-3"></a>cdc[<span class="st">"Sex"</span>]<span class="op">=</span>cdc[<span class="st">"Sex"</span>].replace({<span class="dv">1</span>:<span class="st">"male"</span>,<span class="dv">2</span>:<span class="st">"female"</span>}) <span class="co"># align to our convention</span></span>
+<span id="cb57-4"><a href="#cb57-4"></a></span>
+<span id="cb57-5"><a href="#cb57-5"></a><span class="co"># group the data into percentiles</span></span>
+<span id="cb57-6"><a href="#cb57-6"></a>percentiles<span class="op">=</span>[<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">10</span>,<span class="dv">25</span>,<span class="dv">50</span>,<span class="dv">75</span>,<span class="dv">90</span>,<span class="dv">95</span>,<span class="dv">97</span>]</span>
+<span id="cb57-7"><a href="#cb57-7"></a>percentile_columns<span class="op">=</span>[<span class="st">"P"</span><span class="op">+</span><span class="bu">str</span>(p) <span class="cf">for</span> p <span class="kw">in</span> percentiles] <span class="co"># names of percentile columns</span></span>
+<span id="cb57-8"><a href="#cb57-8"></a>cdc[percentile_columns]<span class="op">=</span>cdc[percentile_columns]<span class="op">*</span><span class="fl">0.393701</span> <span class="co"># convert percentile columns from centimeters to inches (ugh)</span></span>
+<span id="cb57-9"><a href="#cb57-9"></a>cdc20<span class="op">=</span>cdc[cdc[<span class="st">"Age"</span>]<span class="op">==</span><span class="dv">20</span>].set_index(<span class="st">"Sex"</span>) <span class="co"># Select the two rows corresponding to 20-year-olds (males and females)</span></span>
+<span id="cb57-10"><a href="#cb57-10"></a></span>
+<span id="cb57-11"><a href="#cb57-11"></a><span class="bu">print</span>(<span class="st">"Height Percentiles for 20-year-old US population [inches]"</span>)</span>
+<span id="cb57-12"><a href="#cb57-12"></a>cdc20[percentile_columns]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Height Percentiles for 20-year-old US population [inches]</code></pre>
 </div>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="36">
 <div>
 <div>
 
@@ -2393,49 +2715,49 @@ Mean and median age for females: 32.55, 30.00</code></pre>
 </section>
 <section id="lets-compare-the-stats-for-reported-heights-of-the-okcupid-20-year-olds-to-the-cdc-stats-for-20-year-olds." class="level3" data-number="1.9.7">
 <h3 data-number="1.9.7" class="anchored" data-anchor-id="lets-compare-the-stats-for-reported-heights-of-the-okcupid-20-year-olds-to-the-cdc-stats-for-20-year-olds."><span class="header-section-number">1.9.7</span> Let’s compare the stats for reported heights of the OkCupid 20-year-olds to the CDC stats for 20-year-olds.</h3>
-<div id="cell-69" class="cell">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1"></a>mheights<span class="op">=</span>males.loc[males[<span class="st">"age"</span>]<span class="op">==</span><span class="dv">20</span>,<span class="st">"height_inches"</span>] <span class="co"># heights of 20-year-old males</span></span>
-<span id="cb57-2"><a href="#cb57-2"></a>fheights<span class="op">=</span>females.loc[females[<span class="st">"age"</span>]<span class="op">==</span><span class="dv">20</span>,<span class="st">"height_inches"</span>] <span class="co"># heights of 20-year-old females</span></span>
-<span id="cb57-3"><a href="#cb57-3"></a></span>
-<span id="cb57-4"><a href="#cb57-4"></a><span class="co"># To smooth the computation of percentiles, jitter height data by adding</span></span>
-<span id="cb57-5"><a href="#cb57-5"></a><span class="co"># uniformly distributed noise in the range [-0.5,+0.5]</span></span>
-<span id="cb57-6"><a href="#cb57-6"></a>mheightsj<span class="op">=</span>mheights<span class="op">+</span>np.random.uniform(low<span class="op">=-</span><span class="fl">0.5</span>,high<span class="op">=+</span><span class="fl">0.5</span>,size<span class="op">=</span>(<span class="bu">len</span>(mheights),))</span>
-<span id="cb57-7"><a href="#cb57-7"></a>fheightsj<span class="op">=</span>fheights<span class="op">+</span>np.random.uniform(low<span class="op">=-</span><span class="fl">0.5</span>,high<span class="op">=+</span><span class="fl">0.5</span>,size<span class="op">=</span>(<span class="bu">len</span>(fheights),))</span>
-<span id="cb57-8"><a href="#cb57-8"></a></span>
-<span id="cb57-9"><a href="#cb57-9"></a><span class="co"># For each of the available percentiles in CDC data, compute the corresponding percentile from our 20-year-old users</span></span>
-<span id="cb57-10"><a href="#cb57-10"></a>stats<span class="op">=</span>[]</span>
-<span id="cb57-11"><a href="#cb57-11"></a><span class="cf">for</span> percentile,percentile_column <span class="kw">in</span> <span class="bu">zip</span>(percentiles,percentile_columns):</span>
-<span id="cb57-12"><a href="#cb57-12"></a>    stats.append({<span class="st">"sex"</span>:<span class="st">"male"</span>,</span>
-<span id="cb57-13"><a href="#cb57-13"></a>                  <span class="st">"percentile"</span>:percentile,</span>
-<span id="cb57-14"><a href="#cb57-14"></a>                  <span class="st">"CDC"</span>:cdc20.loc[<span class="st">"male"</span>,percentile_column],</span>
-<span id="cb57-15"><a href="#cb57-15"></a>                  <span class="st">"OkCupid"</span>:mheightsj.quantile(percentile<span class="op">/</span><span class="dv">100</span>)})</span>
-<span id="cb57-16"><a href="#cb57-16"></a>    stats.append({<span class="st">"sex"</span>:<span class="st">"female"</span>,</span>
-<span id="cb57-17"><a href="#cb57-17"></a>                  <span class="st">"percentile"</span>:percentile,</span>
-<span id="cb57-18"><a href="#cb57-18"></a>                  <span class="st">"CDC"</span>:cdc20.loc[<span class="st">"female"</span>,percentile_column],</span>
-<span id="cb57-19"><a href="#cb57-19"></a>                  <span class="st">"OkCupid"</span>:fheightsj.quantile(percentile<span class="op">/</span><span class="dv">100</span>)})</span>
-<span id="cb57-20"><a href="#cb57-20"></a>stats<span class="op">=</span>pd.DataFrame(stats).set_index([<span class="st">"sex"</span>,<span class="st">"percentile"</span>]).sort_index()</span>
-<span id="cb57-21"><a href="#cb57-21"></a></span>
-<span id="cb57-22"><a href="#cb57-22"></a><span class="co"># For each percentile, compute the gap between users and CDC</span></span>
-<span id="cb57-23"><a href="#cb57-23"></a>stats[<span class="st">"gap"</span>]<span class="op">=</span>stats[<span class="st">"OkCupid"</span>]<span class="op">-</span>stats[<span class="st">"CDC"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-72" class="cell" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1"></a>mheights<span class="op">=</span>males.loc[males[<span class="st">"age"</span>]<span class="op">==</span><span class="dv">20</span>,<span class="st">"height_inches"</span>] <span class="co"># heights of 20-year-old males</span></span>
+<span id="cb59-2"><a href="#cb59-2"></a>fheights<span class="op">=</span>females.loc[females[<span class="st">"age"</span>]<span class="op">==</span><span class="dv">20</span>,<span class="st">"height_inches"</span>] <span class="co"># heights of 20-year-old females</span></span>
+<span id="cb59-3"><a href="#cb59-3"></a></span>
+<span id="cb59-4"><a href="#cb59-4"></a><span class="co"># To smooth the computation of percentiles, jitter height data by adding</span></span>
+<span id="cb59-5"><a href="#cb59-5"></a><span class="co"># uniformly distributed noise in the range [-0.5,+0.5]</span></span>
+<span id="cb59-6"><a href="#cb59-6"></a>mheightsj<span class="op">=</span>mheights<span class="op">+</span>np.random.uniform(low<span class="op">=-</span><span class="fl">0.5</span>,high<span class="op">=+</span><span class="fl">0.5</span>,size<span class="op">=</span>(<span class="bu">len</span>(mheights),))</span>
+<span id="cb59-7"><a href="#cb59-7"></a>fheightsj<span class="op">=</span>fheights<span class="op">+</span>np.random.uniform(low<span class="op">=-</span><span class="fl">0.5</span>,high<span class="op">=+</span><span class="fl">0.5</span>,size<span class="op">=</span>(<span class="bu">len</span>(fheights),))</span>
+<span id="cb59-8"><a href="#cb59-8"></a></span>
+<span id="cb59-9"><a href="#cb59-9"></a><span class="co"># For each of the available percentiles in CDC data, compute the corresponding percentile from our 20-year-old users</span></span>
+<span id="cb59-10"><a href="#cb59-10"></a>stats<span class="op">=</span>[]</span>
+<span id="cb59-11"><a href="#cb59-11"></a><span class="cf">for</span> percentile,percentile_column <span class="kw">in</span> <span class="bu">zip</span>(percentiles,percentile_columns):</span>
+<span id="cb59-12"><a href="#cb59-12"></a>    stats.append({<span class="st">"sex"</span>:<span class="st">"male"</span>,</span>
+<span id="cb59-13"><a href="#cb59-13"></a>                  <span class="st">"percentile"</span>:percentile,</span>
+<span id="cb59-14"><a href="#cb59-14"></a>                  <span class="st">"CDC"</span>:cdc20.loc[<span class="st">"male"</span>,percentile_column],</span>
+<span id="cb59-15"><a href="#cb59-15"></a>                  <span class="st">"OkCupid"</span>:mheightsj.quantile(percentile<span class="op">/</span><span class="dv">100</span>)})</span>
+<span id="cb59-16"><a href="#cb59-16"></a>    stats.append({<span class="st">"sex"</span>:<span class="st">"female"</span>,</span>
+<span id="cb59-17"><a href="#cb59-17"></a>                  <span class="st">"percentile"</span>:percentile,</span>
+<span id="cb59-18"><a href="#cb59-18"></a>                  <span class="st">"CDC"</span>:cdc20.loc[<span class="st">"female"</span>,percentile_column],</span>
+<span id="cb59-19"><a href="#cb59-19"></a>                  <span class="st">"OkCupid"</span>:fheightsj.quantile(percentile<span class="op">/</span><span class="dv">100</span>)})</span>
+<span id="cb59-20"><a href="#cb59-20"></a>stats<span class="op">=</span>pd.DataFrame(stats).set_index([<span class="st">"sex"</span>,<span class="st">"percentile"</span>]).sort_index()</span>
+<span id="cb59-21"><a href="#cb59-21"></a></span>
+<span id="cb59-22"><a href="#cb59-22"></a><span class="co"># For each percentile, compute the gap between users and CDC</span></span>
+<span id="cb59-23"><a href="#cb59-23"></a>stats[<span class="st">"gap"</span>]<span class="op">=</span>stats[<span class="st">"OkCupid"</span>]<span class="op">-</span>stats[<span class="st">"CDC"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-70" class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1"></a><span class="co"># plot data</span></span>
-<span id="cb58-2"><a href="#cb58-2"></a>fig,(ax1,ax2)<span class="op">=</span>plt.subplots(ncols<span class="op">=</span><span class="dv">2</span>,sharex<span class="op">=</span><span class="va">True</span>,figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">4</span>))</span>
-<span id="cb58-3"><a href="#cb58-3"></a>stats.loc[<span class="st">"male"</span>][[<span class="st">"OkCupid"</span>,<span class="st">"CDC"</span>]].plot.bar(ax<span class="op">=</span>ax1,color<span class="op">=</span>[[<span class="fl">0.5</span>,<span class="fl">0.5</span>,<span class="dv">1</span>],<span class="st">"k"</span>],alpha<span class="op">=</span><span class="dv">1</span>,width<span class="op">=</span><span class="fl">0.8</span>,rot<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb58-4"><a href="#cb58-4"></a>stats.loc[<span class="st">"female"</span>][[<span class="st">"OkCupid"</span>,<span class="st">"CDC"</span>]].plot.bar(ax<span class="op">=</span>ax2,color<span class="op">=</span>[[<span class="dv">1</span>,<span class="fl">0.5</span>,<span class="fl">0.5</span>],<span class="st">"k"</span>],alpha<span class="op">=</span><span class="dv">1</span>,width<span class="op">=</span><span class="fl">0.8</span>,rot<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb58-5"><a href="#cb58-5"></a>ax1.set_ylim([<span class="dv">64</span>,<span class="dv">77</span>])</span>
-<span id="cb58-6"><a href="#cb58-6"></a>ax2.set_ylim([<span class="dv">58</span>,<span class="dv">71</span>])</span>
-<span id="cb58-7"><a href="#cb58-7"></a>ax1.set_ylabel(<span class="st">"Height [inches]"</span>)</span>
-<span id="cb58-8"><a href="#cb58-8"></a>ax2.set_ylabel(<span class="st">"Height [inches]"</span>)</span>
-<span id="cb58-9"><a href="#cb58-9"></a>ax1.set_title(<span class="st">"Height percentiles in 20y-old male users vs CDC data"</span>)</span>
-<span id="cb58-10"><a href="#cb58-10"></a>ax2.set_title(<span class="st">"Height percentiles in 20y-old female users vs CDC data"</span>)</span>
-<span id="cb58-11"><a href="#cb58-11"></a><span class="cf">for</span> ax <span class="kw">in</span> (ax1,ax2):</span>
-<span id="cb58-12"><a href="#cb58-12"></a>    sns.despine(ax<span class="op">=</span>ax)</span>
-<span id="cb58-13"><a href="#cb58-13"></a>fig.tight_layout()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-73" class="cell" data-execution_count="38">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1"></a><span class="co"># plot data</span></span>
+<span id="cb60-2"><a href="#cb60-2"></a>fig,(ax1,ax2)<span class="op">=</span>plt.subplots(ncols<span class="op">=</span><span class="dv">2</span>,sharex<span class="op">=</span><span class="va">True</span>,figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">4</span>))</span>
+<span id="cb60-3"><a href="#cb60-3"></a>stats.loc[<span class="st">"male"</span>][[<span class="st">"OkCupid"</span>,<span class="st">"CDC"</span>]].plot.bar(ax<span class="op">=</span>ax1,color<span class="op">=</span>[[<span class="fl">0.5</span>,<span class="fl">0.5</span>,<span class="dv">1</span>],<span class="st">"k"</span>],alpha<span class="op">=</span><span class="dv">1</span>,width<span class="op">=</span><span class="fl">0.8</span>,rot<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb60-4"><a href="#cb60-4"></a>stats.loc[<span class="st">"female"</span>][[<span class="st">"OkCupid"</span>,<span class="st">"CDC"</span>]].plot.bar(ax<span class="op">=</span>ax2,color<span class="op">=</span>[[<span class="dv">1</span>,<span class="fl">0.5</span>,<span class="fl">0.5</span>],<span class="st">"k"</span>],alpha<span class="op">=</span><span class="dv">1</span>,width<span class="op">=</span><span class="fl">0.8</span>,rot<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb60-5"><a href="#cb60-5"></a>ax1.set_ylim([<span class="dv">64</span>,<span class="dv">77</span>])</span>
+<span id="cb60-6"><a href="#cb60-6"></a>ax2.set_ylim([<span class="dv">58</span>,<span class="dv">71</span>])</span>
+<span id="cb60-7"><a href="#cb60-7"></a>ax1.set_ylabel(<span class="st">"Height [inches]"</span>)</span>
+<span id="cb60-8"><a href="#cb60-8"></a>ax2.set_ylabel(<span class="st">"Height [inches]"</span>)</span>
+<span id="cb60-9"><a href="#cb60-9"></a>ax1.set_title(<span class="st">"Height percentiles in 20y-old male users vs CDC data"</span>)</span>
+<span id="cb60-10"><a href="#cb60-10"></a>ax2.set_title(<span class="st">"Height percentiles in 20y-old female users vs CDC data"</span>)</span>
+<span id="cb60-11"><a href="#cb60-11"></a><span class="cf">for</span> ax <span class="kw">in</span> (ax1,ax2):</span>
+<span id="cb60-12"><a href="#cb60-12"></a>    sns.despine(ax<span class="op">=</span>ax)</span>
+<span id="cb60-13"><a href="#cb60-13"></a>fig.tight_layout()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="tutorial_1_files/figure-html/cell-39-output-1.svg" class="img-fluid figure-img"></p>
+<p><img src="tutorial_1_files/figure-html/cell-40-output-1.svg" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
