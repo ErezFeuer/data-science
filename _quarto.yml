@@ -5,7 +5,7 @@ project:
 
 book:
   title: "Introduction to Data Science"
-  author: "Yonatan Friedman"
+  author: "Yonatan Friedman & Erez Feuer"
   repo-url: https://github.com/ErezFeuer/data-science/
   # favicon: archive/clock-history.png
   chapters:
@@ -16,6 +16,7 @@ book:
       - tirgul/tirgul_2/tirgul_2.ipynb
       - tirgul/tirgul_3/tirgul_3.ipynb
       - tirgul/tirgul_4/tirgul_4.ipynb
+      - tirgul/tirgul_5/tirgul_5.ipynb
     
 
 
