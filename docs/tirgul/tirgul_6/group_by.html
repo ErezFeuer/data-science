@@ -214,17 +214,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#what-is-the-count-of-congressional-members-on-a-state-by-state-basis-over-the-entire-history-of-the-dataset" id="toc-what-is-the-count-of-congressional-members-on-a-state-by-state-basis-over-the-entire-history-of-the-dataset" class="nav-link active" data-scroll-target="#what-is-the-count-of-congressional-members-on-a-state-by-state-basis-over-the-entire-history-of-the-dataset"><span class="header-section-number">7.0.1</span> What is the count of Congressional members, on a state-by-state basis, over the entire history of the dataset?</a></li>
-  <li><a href="#you-call-.groupby-and-pass-the-name-of-the-column-you-want-to-group-on-which-is-state.-then-you-use-last_name-to-specify-the-columns-on-which-you-want-to-perform-the-actual-aggregation." id="toc-you-call-.groupby-and-pass-the-name-of-the-column-you-want-to-group-on-which-is-state.-then-you-use-last_name-to-specify-the-columns-on-which-you-want-to-perform-the-actual-aggregation." class="nav-link" data-scroll-target="#you-call-.groupby-and-pass-the-name-of-the-column-you-want-to-group-on-which-is-state.-then-you-use-last_name-to-specify-the-columns-on-which-you-want-to-perform-the-actual-aggregation."><span class="header-section-number">7.0.2</span> You call .groupby() and pass the name of the column you want to group on, which is “state”. Then, you use [“last_name”] to specify the columns on which you want to perform the actual aggregation.</a></li>
-  <li><a href="#you-can-pass-a-lot-more-than-just-a-single-column-name-to-.groupby-as-the-first-argument.-you-can-also-specify-any-of-the-following" id="toc-you-can-pass-a-lot-more-than-just-a-single-column-name-to-.groupby-as-the-first-argument.-you-can-also-specify-any-of-the-following" class="nav-link" data-scroll-target="#you-can-pass-a-lot-more-than-just-a-single-column-name-to-.groupby-as-the-first-argument.-you-can-also-specify-any-of-the-following"><span class="header-section-number">7.0.3</span> You can pass a lot more than just a single column name to .groupby() as the first argument. You can also specify any of the following:</a></li>
-  <li><a href="#heres-an-example-of-grouping-jointly-on-two-columns-which-finds-the-count-of-congressional-members-broken-out-by-state-and-then-by-gender" id="toc-heres-an-example-of-grouping-jointly-on-two-columns-which-finds-the-count-of-congressional-members-broken-out-by-state-and-then-by-gender" class="nav-link" data-scroll-target="#heres-an-example-of-grouping-jointly-on-two-columns-which-finds-the-count-of-congressional-members-broken-out-by-state-and-then-by-gender"><span class="header-section-number">7.0.4</span> Here’s an example of grouping jointly on two columns, which finds the count of Congressional members broken out by state and then by gender:</a></li>
-  <li><a href="#note-when-we-use-groupby-on-more-than-one-column-we-create-a-multiindex" id="toc-note-when-we-use-groupby-on-more-than-one-column-we-create-a-multiindex" class="nav-link" data-scroll-target="#note-when-we-use-groupby-on-more-than-one-column-we-create-a-multiindex"><span class="header-section-number">7.0.5</span> Note: When we use <code>groupby</code> on more than one column, we create a <code>MultiIndex</code></a></li>
-  <li><a href="#if-we-want-to-keep-the-data-in-columns-we-can-use-the-as_index-parameter" id="toc-if-we-want-to-keep-the-data-in-columns-we-can-use-the-as_index-parameter" class="nav-link" data-scroll-target="#if-we-want-to-keep-the-data-in-columns-we-can-use-the-as_index-parameter"><span class="header-section-number">7.0.6</span> If we want to keep the data in columns, we can use the <code>as_index</code> parameter</a></li>
-  <li><a href="#you-might-have-noticed-that-groupby-automatically-sorts-the-data.-we-can-also-change-this-if-we-want." id="toc-you-might-have-noticed-that-groupby-automatically-sorts-the-data.-we-can-also-change-this-if-we-want." class="nav-link" data-scroll-target="#you-might-have-noticed-that-groupby-automatically-sorts-the-data.-we-can-also-change-this-if-we-want."><span class="header-section-number">7.0.7</span> You might have noticed that <code>groupby</code> automatically sorts the data. We can also change this, if we want.</a></li>
-  <li><a href="#what-is-actually-happening-here" id="toc-what-is-actually-happening-here" class="nav-link" data-scroll-target="#what-is-actually-happening-here"><span class="header-section-number">7.0.8</span> What is actually happening here?</a></li>
-  <li><a href="#when-you-use-groupby-you-automatically-create-a-dictionary-with-the-different-group-labels." id="toc-when-you-use-groupby-you-automatically-create-a-dictionary-with-the-different-group-labels." class="nav-link" data-scroll-target="#when-you-use-groupby-you-automatically-create-a-dictionary-with-the-different-group-labels."><span class="header-section-number">7.0.9</span> When you use <code>groupby</code>, you automatically create a dictionary with the different group labels.</a></li>
-  <li><a href="#you-can-also-use-.get_group-as-a-way-to-drill-down-to-the-sub-table-from-a-single-group" id="toc-you-can-also-use-.get_group-as-a-way-to-drill-down-to-the-sub-table-from-a-single-group" class="nav-link" data-scroll-target="#you-can-also-use-.get_group-as-a-way-to-drill-down-to-the-sub-table-from-a-single-group"><span class="header-section-number">7.0.10</span> You can also use <code>.get_group()</code> as a way to drill down to the sub-table from a single group:</a></li>
-  <li><a href="#this-is-virtually-equivalent-to-using-.loc.-you-could-get-the-same-output-with-something-like-df.locdfstate-pa." id="toc-this-is-virtually-equivalent-to-using-.loc.-you-could-get-the-same-output-with-something-like-df.locdfstate-pa." class="nav-link" data-scroll-target="#this-is-virtually-equivalent-to-using-.loc.-you-could-get-the-same-output-with-something-like-df.locdfstate-pa."><span class="header-section-number">7.0.11</span> This is virtually equivalent to using <code>.loc[]</code>. You could get the same output with something like <code>df.loc[df["state"] == "PA"]</code>.</a></li>
+  <li><a href="#multi-index" id="toc-multi-index" class="nav-link active" data-scroll-target="#multi-index"><span class="header-section-number">7.1</span> multi index</a></li>
+  <li><a href="#what-is-actually-happening-here" id="toc-what-is-actually-happening-here" class="nav-link" data-scroll-target="#what-is-actually-happening-here"><span class="header-section-number">7.2</span> What is actually happening here?</a></li>
+  <li><a href="#get-group" id="toc-get-group" class="nav-link" data-scroll-target="#get-group"><span class="header-section-number">7.3</span> get group</a></li>
   </ul>
 </nav>
     </div>
@@ -250,11 +242,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div id="cell-1" class="cell" data-execution_count="1">
+<div id="cell-1" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The dataset we’re going to use has information on members of the US congress - first and last names - birth date - gender - type (“rep” for House of Representatives or “sen” for Senate) - U.S. state - political party.</p>
-<div id="cell-3" class="cell" data-execution_count="2">
+<div id="cell-3" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>dtypes <span class="op">=</span> {</span>
 <span id="cb2-2"><a href="#cb2-2"></a>    <span class="st">"first_name"</span>: <span class="st">"category"</span>,</span>
 <span id="cb2-3"><a href="#cb2-3"></a>    <span class="st">"gender"</span>: <span class="st">"category"</span>,</span>
@@ -269,15 +261,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-12"><a href="#cb2-12"></a>    parse_dates<span class="op">=</span>[<span class="st">"birthday"</span>]</span>
 <span id="cb2-13"><a href="#cb2-13"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-4" class="cell" data-execution_count="3">
+<div id="cell-4" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>df.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>(12048, 7)</code></pre>
 </div>
 </div>
-<div id="cell-5" class="cell" data-execution_count="17">
+<div id="cell-5" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="17">
+<div class="cell-output cell-output-display" data-execution_count="21">
 <div>
 <div>
 
@@ -414,9 +406,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="cell-6" class="cell" data-execution_count="6">
+<div id="cell-6" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>df.dtypes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>last_name             object
 first_name          category
 birthday      datetime64[ns]
@@ -427,19 +419,15 @@ party               category
 dtype: object</code></pre>
 </div>
 </div>
-<section id="what-is-the-count-of-congressional-members-on-a-state-by-state-basis-over-the-entire-history-of-the-dataset" class="level3" data-number="7.0.1">
-<h3 data-number="7.0.1" class="anchored" data-anchor-id="what-is-the-count-of-congressional-members-on-a-state-by-state-basis-over-the-entire-history-of-the-dataset"><span class="header-section-number">7.0.1</span> What is the count of Congressional members, on a state-by-state basis, over the entire history of the dataset?</h3>
-</section>
-<section id="you-call-.groupby-and-pass-the-name-of-the-column-you-want-to-group-on-which-is-state.-then-you-use-last_name-to-specify-the-columns-on-which-you-want-to-perform-the-actual-aggregation." class="level3" data-number="7.0.2">
-<h3 data-number="7.0.2" class="anchored" data-anchor-id="you-call-.groupby-and-pass-the-name-of-the-column-you-want-to-group-on-which-is-state.-then-you-use-last_name-to-specify-the-columns-on-which-you-want-to-perform-the-actual-aggregation."><span class="header-section-number">7.0.2</span> You call .groupby() and pass the name of the column you want to group on, which is “state”. Then, you use [“last_name”] to specify the columns on which you want to perform the actual aggregation.</h3>
-<div id="cell-8" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a></span>
-<span id="cb8-2"><a href="#cb8-2"></a>df.groupby(<span class="st">"state"</span>)[<span class="st">"last_name"</span>].count()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>What is the count of Congressional members, on a state-by-state basis, over the entire history of the dataset?</p>
+<p>You call <code>.groupby()</code> and pass the name of the column you want to group on, which is “state”. Then, you use <code>["last_name"]</code> to specify the columns on which you want to perform the actual aggregation.</p>
+<div id="cell-8" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>df.groupby(<span class="st">"state"</span>)[<span class="st">"last_name"</span>].count()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>/var/folders/wn/2bz1970d2w5182zy7h96yfcc0000gn/T/ipykernel_39943/3228017122.py:1: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
   df.groupby("state")["last_name"].count()</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="23">
 <pre><code>state
 AK      16
 AL     209
@@ -502,25 +490,17 @@ WY      40
 Name: last_name, dtype: int64</code></pre>
 </div>
 </div>
-</section>
-<section id="you-can-pass-a-lot-more-than-just-a-single-column-name-to-.groupby-as-the-first-argument.-you-can-also-specify-any-of-the-following" class="level3" data-number="7.0.3">
-<h3 data-number="7.0.3" class="anchored" data-anchor-id="you-can-pass-a-lot-more-than-just-a-single-column-name-to-.groupby-as-the-first-argument.-you-can-also-specify-any-of-the-following"><span class="header-section-number">7.0.3</span> You can pass a lot more than just a single column name to .groupby() as the first argument. You can also specify any of the following:</h3>
-<ul>
-<li>A list of multiple column names</li>
-<li>A dictionary</li>
-<li>A Pandas Series</li>
-<li>A NumPy array or Pandas Index</li>
-</ul>
-</section>
-<section id="heres-an-example-of-grouping-jointly-on-two-columns-which-finds-the-count-of-congressional-members-broken-out-by-state-and-then-by-gender" class="level3" data-number="7.0.4">
-<h3 data-number="7.0.4" class="anchored" data-anchor-id="heres-an-example-of-grouping-jointly-on-two-columns-which-finds-the-count-of-congressional-members-broken-out-by-state-and-then-by-gender"><span class="header-section-number">7.0.4</span> Here’s an example of grouping jointly on two columns, which finds the count of Congressional members broken out by state and then by gender:</h3>
-<div id="cell-10" class="cell" data-execution_count="8">
+<p>You can pass a lot more than just a single column name to <code>.groupby()</code> as the first argument. You can also specify any of the following: - A list of multiple column names - A dictionary - A Pandas Series - A NumPy array or Pandas Index</p>
+<section id="multi-index" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="multi-index"><span class="header-section-number">7.1</span> multi index</h2>
+<p>Here’s an example of grouping jointly on two columns, which finds the count of Congressional members broken out by state and then by gender:</p>
+<div id="cell-10" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>df.groupby([<span class="st">"state"</span>, <span class="st">"gender"</span>])[<span class="st">"last_name"</span>].count()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>/var/folders/wn/2bz1970d2w5182zy7h96yfcc0000gn/T/ipykernel_39943/503199787.py:1: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
   df.groupby(["state", "gender"])["last_name"].count()</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="24">
 <pre><code>state  gender
 AK     F           0
        M          16
@@ -536,23 +516,21 @@ WY     F           1
 Name: last_name, Length: 116, dtype: int64</code></pre>
 </div>
 </div>
-</section>
-<section id="note-when-we-use-groupby-on-more-than-one-column-we-create-a-multiindex" class="level3" data-number="7.0.5">
-<h3 data-number="7.0.5" class="anchored" data-anchor-id="note-when-we-use-groupby-on-more-than-one-column-we-create-a-multiindex"><span class="header-section-number">7.0.5</span> Note: When we use <code>groupby</code> on more than one column, we create a <code>MultiIndex</code></h3>
-<div id="cell-12" class="cell" data-execution_count="9">
+<p>Note: When we use <code>groupby</code> on more than one column, we create a <code>MultiIndex</code></p>
+<div id="cell-12" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>n_by_state_gender <span class="op">=</span> df.groupby([<span class="st">"state"</span>, <span class="st">"gender"</span>])[<span class="st">"last_name"</span>].count()</span>
 <span id="cb14-2"><a href="#cb14-2"></a><span class="bu">type</span>(n_by_state_gender)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>/var/folders/wn/2bz1970d2w5182zy7h96yfcc0000gn/T/ipykernel_39943/197250217.py:1: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
   n_by_state_gender = df.groupby(["state", "gender"])["last_name"].count()</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="25">
 <pre><code>pandas.core.series.Series</code></pre>
 </div>
 </div>
-<div id="cell-13" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a> n_by_state_gender.index</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
+<div id="cell-13" class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>n_by_state_gender.index</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="26">
 <pre><code>MultiIndex([('AK', 'F'),
             ('AK', 'M'),
             ('AL', 'F'),
@@ -577,16 +555,14 @@ Name: last_name, Length: 116, dtype: int64</code></pre>
            names=['state', 'gender'], length=116)</code></pre>
 </div>
 </div>
-</section>
-<section id="if-we-want-to-keep-the-data-in-columns-we-can-use-the-as_index-parameter" class="level3" data-number="7.0.6">
-<h3 data-number="7.0.6" class="anchored" data-anchor-id="if-we-want-to-keep-the-data-in-columns-we-can-use-the-as_index-parameter"><span class="header-section-number">7.0.6</span> If we want to keep the data in columns, we can use the <code>as_index</code> parameter</h3>
-<div id="cell-15" class="cell" data-execution_count="11">
+<p>If we want to keep the data in columns, we can use the <code>as_index</code> parameter</p>
+<div id="cell-15" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>df.groupby([<span class="st">"state"</span>, <span class="st">"gender"</span>], as_index<span class="op">=</span><span class="va">False</span>)[<span class="st">"last_name"</span>].count()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>/var/folders/wn/2bz1970d2w5182zy7h96yfcc0000gn/T/ipykernel_39943/1045572165.py:1: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
   df.groupby(["state", "gender"], as_index=False)["last_name"].count()</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="11">
+<div class="cell-output cell-output-display" data-execution_count="27">
 <div>
 <div>
 
@@ -675,16 +651,14 @@ Name: last_name, Length: 116, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-</section>
-<section id="you-might-have-noticed-that-groupby-automatically-sorts-the-data.-we-can-also-change-this-if-we-want." class="level3" data-number="7.0.7">
-<h3 data-number="7.0.7" class="anchored" data-anchor-id="you-might-have-noticed-that-groupby-automatically-sorts-the-data.-we-can-also-change-this-if-we-want."><span class="header-section-number">7.0.7</span> You might have noticed that <code>groupby</code> automatically sorts the data. We can also change this, if we want.</h3>
-<div id="cell-17" class="cell" data-execution_count="12">
+<p>You might have noticed that <code>groupby</code> automatically sorts the data. We can also change this, if we want.</p>
+<div id="cell-17" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>df.groupby(<span class="st">"state"</span>, sort<span class="op">=</span><span class="va">False</span>)[<span class="st">"last_name"</span>].count()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>/var/folders/wn/2bz1970d2w5182zy7h96yfcc0000gn/T/ipykernel_39943/966111394.py:1: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
   df.groupby("state", sort=False)["last_name"].count()</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="12">
+<div class="cell-output cell-output-display" data-execution_count="28">
 <pre><code>state
 DE      97
 VA     433
@@ -748,157 +722,24 @@ Name: last_name, dtype: int64</code></pre>
 </div>
 </div>
 </section>
-<section id="what-is-actually-happening-here" class="level3" data-number="7.0.8">
-<h3 data-number="7.0.8" class="anchored" data-anchor-id="what-is-actually-happening-here"><span class="header-section-number">7.0.8</span> What is actually happening here?</h3>
-<div id="cell-19" class="cell" data-execution_count="13">
+<section id="what-is-actually-happening-here" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="what-is-actually-happening-here"><span class="header-section-number">7.2</span> What is actually happening here?</h2>
+<div id="cell-19" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>by_state <span class="op">=</span> df.groupby(<span class="st">"state"</span>)</span>
-<span id="cb24-2"><a href="#cb24-2"></a>by_state.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-2"><a href="#cb24-2"></a>by_state</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/wn/2bz1970d2w5182zy7h96yfcc0000gn/T/ipykernel_39943/1960325577.py:1: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
+<pre><code>/var/folders/wn/2bz1970d2w5182zy7h96yfcc0000gn/T/ipykernel_39943/3630249550.py:1: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
   by_state = df.groupby("state")</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="13">
-<div>
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">last_name</th>
-<th data-quarto-table-cell-role="th">first_name</th>
-<th data-quarto-table-cell-role="th">birthday</th>
-<th data-quarto-table-cell-role="th">gender</th>
-<th data-quarto-table-cell-role="th">type</th>
-<th data-quarto-table-cell-role="th">state</th>
-<th data-quarto-table-cell-role="th">party</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>Bassett</td>
-<td>Richard</td>
-<td>1745-04-02</td>
-<td>M</td>
-<td>sen</td>
-<td>DE</td>
-<td>Anti-Administration</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>Bland</td>
-<td>Theodorick</td>
-<td>1742-03-21</td>
-<td>M</td>
-<td>rep</td>
-<td>VA</td>
-<td>NaN</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>Burke</td>
-<td>Aedanus</td>
-<td>1743-06-16</td>
-<td>M</td>
-<td>rep</td>
-<td>SC</td>
-<td>NaN</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>Carroll</td>
-<td>Daniel</td>
-<td>1730-07-22</td>
-<td>M</td>
-<td>rep</td>
-<td>MD</td>
-<td>NaN</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>Clymer</td>
-<td>George</td>
-<td>1739-03-16</td>
-<td>M</td>
-<td>rep</td>
-<td>PA</td>
-<td>NaN</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">11114</td>
-<td>Frazer</td>
-<td>Victor</td>
-<td>1943-05-24</td>
-<td>M</td>
-<td>rep</td>
-<td>VI</td>
-<td>Independent</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">11335</td>
-<td>Underwood</td>
-<td>Robert</td>
-<td>1948-07-13</td>
-<td>M</td>
-<td>rep</td>
-<td>GU</td>
-<td>Democrat</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">11749</td>
-<td>Christensen</td>
-<td>Donna</td>
-<td>1945-09-19</td>
-<td>F</td>
-<td>rep</td>
-<td>VI</td>
-<td>Democrat</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">11752</td>
-<td>Faleomavaega</td>
-<td>Eni</td>
-<td>1943-08-15</td>
-<td>M</td>
-<td>rep</td>
-<td>AS</td>
-<td>Democrat</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">11886</td>
-<td>Bordallo</td>
-<td>Madeleine</td>
-<td>1933-05-31</td>
-<td>F</td>
-<td>rep</td>
-<td>GU</td>
-<td>Democrat</td>
-</tr>
-</tbody>
-</table>
-
-<p>279 rows × 7 columns</p>
+<div class="cell-output cell-output-display" data-execution_count="29">
+<pre><code>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x12f9b0890&gt;</code></pre>
 </div>
 </div>
-</div>
-</div>
-<div id="cell-20" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a><span class="cf">for</span> state, frame <span class="kw">in</span> by_state:</span>
-<span id="cb26-2"><a href="#cb26-2"></a>    <span class="bu">print</span>(<span class="ss">f"First 2 entries for </span><span class="sc">{</span>state<span class="sc">!r}</span><span class="ss">"</span>)</span>
-<span id="cb26-3"><a href="#cb26-3"></a>    <span class="bu">print</span>(<span class="st">"------------------------"</span>)</span>
-<span id="cb26-4"><a href="#cb26-4"></a>    <span class="bu">print</span>(frame.head(<span class="dv">2</span>), end<span class="op">=</span><span class="st">"</span><span class="ch">\n\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-20" class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a><span class="cf">for</span> state, frame <span class="kw">in</span> by_state:</span>
+<span id="cb27-2"><a href="#cb27-2"></a>    <span class="bu">print</span>(<span class="ss">f"First 2 entries for </span><span class="sc">{</span>state<span class="sc">!r}</span><span class="ss">"</span>)</span>
+<span id="cb27-3"><a href="#cb27-3"></a>    <span class="bu">print</span>(<span class="st">"------------------------"</span>)</span>
+<span id="cb27-4"><a href="#cb27-4"></a>    <span class="bu">print</span>(frame.head(<span class="dv">2</span>), end<span class="op">=</span><span class="st">"</span><span class="ch">\n\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>First 2 entries for 'AK'
 ------------------------
@@ -1258,12 +1099,10 @@ First 2 entries for 'WY'
 </code></pre>
 </div>
 </div>
-</section>
-<section id="when-you-use-groupby-you-automatically-create-a-dictionary-with-the-different-group-labels." class="level3" data-number="7.0.9">
-<h3 data-number="7.0.9" class="anchored" data-anchor-id="when-you-use-groupby-you-automatically-create-a-dictionary-with-the-different-group-labels."><span class="header-section-number">7.0.9</span> When you use <code>groupby</code>, you automatically create a dictionary with the different group labels.</h3>
-<div id="cell-22" class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a>by_state.groups[<span class="st">"PA"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="15">
+<p>When you use <code>groupby</code>, you automatically create a dictionary with the different group labels.</p>
+<div id="cell-22" class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a>by_state.groups[<span class="st">"PA"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="31">
 <pre><code>Index([    4,    19,    21,    27,    38,    57,    69,    76,    84,    88,
        ...
        11838, 11862, 11871, 11873, 11883, 11887, 11926, 11938, 11952, 11965],
@@ -1271,11 +1110,12 @@ First 2 entries for 'WY'
 </div>
 </div>
 </section>
-<section id="you-can-also-use-.get_group-as-a-way-to-drill-down-to-the-sub-table-from-a-single-group" class="level3" data-number="7.0.10">
-<h3 data-number="7.0.10" class="anchored" data-anchor-id="you-can-also-use-.get_group-as-a-way-to-drill-down-to-the-sub-table-from-a-single-group"><span class="header-section-number">7.0.10</span> You can also use <code>.get_group()</code> as a way to drill down to the sub-table from a single group:</h3>
-<div id="cell-24" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a>by_state.get_group(<span class="st">"PA"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="16">
+<section id="get-group" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="get-group"><span class="header-section-number">7.3</span> get group</h2>
+<p>You can also use <code>.get_group()</code> as a way to drill down to the sub-table from a single group:</p>
+<div id="cell-24" class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a>by_state.get_group(<span class="st">"PA"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="32">
 <div>
 <div>
 
@@ -1412,9 +1252,7 @@ First 2 entries for 'WY'
 </div>
 </div>
 </div>
-</section>
-<section id="this-is-virtually-equivalent-to-using-.loc.-you-could-get-the-same-output-with-something-like-df.locdfstate-pa." class="level3" data-number="7.0.11">
-<h3 data-number="7.0.11" class="anchored" data-anchor-id="this-is-virtually-equivalent-to-using-.loc.-you-could-get-the-same-output-with-something-like-df.locdfstate-pa."><span class="header-section-number">7.0.11</span> This is virtually equivalent to using <code>.loc[]</code>. You could get the same output with something like <code>df.loc[df["state"] == "PA"]</code>.</h3>
+<p>This is virtually equivalent to using <code>.loc[]</code>. You could get the same output with something like <code>df.loc[df["state"] == "PA"]</code>.</p>
 
 
 </section>
