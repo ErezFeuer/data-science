@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introduction to Data Science - 7&nbsp; Groupby</title>
+<title>Introduction to Data Science - 8&nbsp; Groupby</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -57,14 +57,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../tirgul/tirgul_6/tirgul_6.html" rel="prev">
+<link href="../../tirgul/tirgul_7/tirgul_7.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -80,13 +80,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
+  "limit": 20,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -95,14 +89,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
@@ -114,12 +107,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../tirgul/tirgul_1/tutorial_1.html">Tirgul</a></li><li class="breadcrumb-item"><a href="../../tirgul/tirgul_6/group_by.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Groupby</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../tirgul/tirgul_1/tutorial_1.html">Tirgul</a></li><li class="breadcrumb-item"><a href="../../tirgul/tirgul_6/group_by.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Groupby</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -129,12 +122,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../../">Introduction to Data Science</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/ErezFeuer/data-science/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/ErezFeuer/data-science/" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
 </div>
     </div>
       </div>
@@ -198,8 +191,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../tirgul/tirgul_7/tirgul_7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Tutorial 7</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../tirgul/tirgul_6/group_by.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Groupby</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Groupby</span></span></a>
   </div>
 </li>
       </ul>
@@ -207,25 +206,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#multi-index" id="toc-multi-index" class="nav-link active" data-scroll-target="#multi-index"><span class="header-section-number">7.1</span> multi index</a></li>
-  <li><a href="#what-is-actually-happening-here" id="toc-what-is-actually-happening-here" class="nav-link" data-scroll-target="#what-is-actually-happening-here"><span class="header-section-number">7.2</span> What is actually happening here?</a></li>
-  <li><a href="#get-group" id="toc-get-group" class="nav-link" data-scroll-target="#get-group"><span class="header-section-number">7.3</span> get group</a></li>
+  <li><a href="#multi-index" id="toc-multi-index" class="nav-link active" data-scroll-target="#multi-index"><span class="header-section-number">8.1</span> multi index</a></li>
+  <li><a href="#what-is-actually-happening-here" id="toc-what-is-actually-happening-here" class="nav-link" data-scroll-target="#what-is-actually-happening-here"><span class="header-section-number">8.2</span> What is actually happening here?</a></li>
+  <li><a href="#get-group" id="toc-get-group" class="nav-link" data-scroll-target="#get-group"><span class="header-section-number">8.3</span> get group</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../tirgul/tirgul_1/tutorial_1.html">Tirgul</a></li><li class="breadcrumb-item"><a href="../../tirgul/tirgul_6/group_by.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Groupby</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Groupby</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source" data-quarto-source-url="https://github.com/ErezFeuer/data-science/blob/main/tirgul/tirgul_6/group_by.ipynb"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Groupby</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source" data-quarto-source-url="https://github.com/ErezFeuer/data-science/blob/main/tirgul/tirgul_6/group_by.ipynb"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -238,15 +237,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
-
 </header>
 
-
-<div id="cell-1" class="cell" data-execution_count="18">
+<div class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The dataset we’re going to use has information on members of the US congress - first and last names - birth date - gender - type (“rep” for House of Representatives or “sen” for Senate) - U.S. state - political party.</p>
-<div id="cell-3" class="cell" data-execution_count="19">
+<div class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>dtypes <span class="op">=</span> {</span>
 <span id="cb2-2"><a href="#cb2-2"></a>    <span class="st">"first_name"</span>: <span class="st">"category"</span>,</span>
 <span id="cb2-3"><a href="#cb2-3"></a>    <span class="st">"gender"</span>: <span class="st">"category"</span>,</span>
@@ -261,16 +258,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-12"><a href="#cb2-12"></a>    parse_dates<span class="op">=</span>[<span class="st">"birthday"</span>]</span>
 <span id="cb2-13"><a href="#cb2-13"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-4" class="cell" data-execution_count="20">
+<div class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>df.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>(12048, 7)</code></pre>
 </div>
 </div>
-<div id="cell-5" class="cell" data-execution_count="21">
+<div class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
-<div>
 <div>
 
 
@@ -405,8 +401,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</div>
-<div id="cell-6" class="cell" data-execution_count="22">
+<div class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>df.dtypes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>last_name             object
@@ -421,7 +416,7 @@ dtype: object</code></pre>
 </div>
 <p>What is the count of Congressional members, on a state-by-state basis, over the entire history of the dataset?</p>
 <p>You call <code>.groupby()</code> and pass the name of the column you want to group on, which is “state”. Then, you use <code>["last_name"]</code> to specify the columns on which you want to perform the actual aggregation.</p>
-<div id="cell-8" class="cell" data-execution_count="23">
+<div class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>df.groupby(<span class="st">"state"</span>)[<span class="st">"last_name"</span>].count()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>/var/folders/wn/2bz1970d2w5182zy7h96yfcc0000gn/T/ipykernel_39943/3228017122.py:1: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
@@ -491,10 +486,10 @@ Name: last_name, dtype: int64</code></pre>
 </div>
 </div>
 <p>You can pass a lot more than just a single column name to <code>.groupby()</code> as the first argument. You can also specify any of the following: - A list of multiple column names - A dictionary - A Pandas Series - A NumPy array or Pandas Index</p>
-<section id="multi-index" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="multi-index"><span class="header-section-number">7.1</span> multi index</h2>
+<section id="multi-index" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="multi-index"><span class="header-section-number">8.1</span> multi index</h2>
 <p>Here’s an example of grouping jointly on two columns, which finds the count of Congressional members broken out by state and then by gender:</p>
-<div id="cell-10" class="cell" data-execution_count="24">
+<div class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>df.groupby([<span class="st">"state"</span>, <span class="st">"gender"</span>])[<span class="st">"last_name"</span>].count()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>/var/folders/wn/2bz1970d2w5182zy7h96yfcc0000gn/T/ipykernel_39943/503199787.py:1: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
@@ -517,7 +512,7 @@ Name: last_name, Length: 116, dtype: int64</code></pre>
 </div>
 </div>
 <p>Note: When we use <code>groupby</code> on more than one column, we create a <code>MultiIndex</code></p>
-<div id="cell-12" class="cell" data-execution_count="25">
+<div class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>n_by_state_gender <span class="op">=</span> df.groupby([<span class="st">"state"</span>, <span class="st">"gender"</span>])[<span class="st">"last_name"</span>].count()</span>
 <span id="cb14-2"><a href="#cb14-2"></a><span class="bu">type</span>(n_by_state_gender)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -528,7 +523,7 @@ Name: last_name, Length: 116, dtype: int64</code></pre>
 <pre><code>pandas.core.series.Series</code></pre>
 </div>
 </div>
-<div id="cell-13" class="cell" data-execution_count="26">
+<div class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>n_by_state_gender.index</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="26">
 <pre><code>MultiIndex([('AK', 'F'),
@@ -556,14 +551,13 @@ Name: last_name, Length: 116, dtype: int64</code></pre>
 </div>
 </div>
 <p>If we want to keep the data in columns, we can use the <code>as_index</code> parameter</p>
-<div id="cell-15" class="cell" data-execution_count="27">
+<div class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>df.groupby([<span class="st">"state"</span>, <span class="st">"gender"</span>], as_index<span class="op">=</span><span class="va">False</span>)[<span class="st">"last_name"</span>].count()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>/var/folders/wn/2bz1970d2w5182zy7h96yfcc0000gn/T/ipykernel_39943/1045572165.py:1: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
   df.groupby(["state", "gender"], as_index=False)["last_name"].count()</code></pre>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="27">
-<div>
 <div>
 
 
@@ -650,9 +644,8 @@ Name: last_name, Length: 116, dtype: int64</code></pre>
 </div>
 </div>
 </div>
-</div>
 <p>You might have noticed that <code>groupby</code> automatically sorts the data. We can also change this, if we want.</p>
-<div id="cell-17" class="cell" data-execution_count="28">
+<div class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>df.groupby(<span class="st">"state"</span>, sort<span class="op">=</span><span class="va">False</span>)[<span class="st">"last_name"</span>].count()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>/var/folders/wn/2bz1970d2w5182zy7h96yfcc0000gn/T/ipykernel_39943/966111394.py:1: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
@@ -722,9 +715,9 @@ Name: last_name, dtype: int64</code></pre>
 </div>
 </div>
 </section>
-<section id="what-is-actually-happening-here" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="what-is-actually-happening-here"><span class="header-section-number">7.2</span> What is actually happening here?</h2>
-<div id="cell-19" class="cell" data-execution_count="29">
+<section id="what-is-actually-happening-here" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="what-is-actually-happening-here"><span class="header-section-number">8.2</span> What is actually happening here?</h2>
+<div class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>by_state <span class="op">=</span> df.groupby(<span class="st">"state"</span>)</span>
 <span id="cb24-2"><a href="#cb24-2"></a>by_state</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -735,7 +728,7 @@ Name: last_name, dtype: int64</code></pre>
 <pre><code>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x12f9b0890&gt;</code></pre>
 </div>
 </div>
-<div id="cell-20" class="cell" data-execution_count="30">
+<div class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a><span class="cf">for</span> state, frame <span class="kw">in</span> by_state:</span>
 <span id="cb27-2"><a href="#cb27-2"></a>    <span class="bu">print</span>(<span class="ss">f"First 2 entries for </span><span class="sc">{</span>state<span class="sc">!r}</span><span class="ss">"</span>)</span>
 <span id="cb27-3"><a href="#cb27-3"></a>    <span class="bu">print</span>(<span class="st">"------------------------"</span>)</span>
@@ -1100,7 +1093,7 @@ First 2 entries for 'WY'
 </div>
 </div>
 <p>When you use <code>groupby</code>, you automatically create a dictionary with the different group labels.</p>
-<div id="cell-22" class="cell" data-execution_count="31">
+<div class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a>by_state.groups[<span class="st">"PA"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="31">
 <pre><code>Index([    4,    19,    21,    27,    38,    57,    69,    76,    84,    88,
@@ -1110,13 +1103,12 @@ First 2 entries for 'WY'
 </div>
 </div>
 </section>
-<section id="get-group" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="get-group"><span class="header-section-number">7.3</span> get group</h2>
+<section id="get-group" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="get-group"><span class="header-section-number">8.3</span> get group</h2>
 <p>You can also use <code>.get_group()</code> as a way to drill down to the sub-table from a single group:</p>
-<div id="cell-24" class="cell" data-execution_count="32">
+<div class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a>by_state.get_group(<span class="st">"PA"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="32">
-<div>
 <div>
 
 
@@ -1248,7 +1240,6 @@ First 2 entries for 'WY'
 </table>
 
 <p>1053 rows × 7 columns</p>
-</div>
 </div>
 </div>
 </div>
@@ -1388,9 +1379,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   if (showAllCode) {
     showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+  function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
+      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1400,17 +1392,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start',
+      placement: 'bottom-start'
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1423,125 +1406,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
-          }
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
-        return container.innerHTML
-      } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1585,7 +1449,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
-            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1611,32 +1474,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1698,15 +1535,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../tirgul/tirgul_6/tirgul_6.html" class="pagination-link" aria-label="Tutorial 6">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tutorial 6</span></span>
+      <a href="../../tirgul/tirgul_7/tirgul_7.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Tutorial 7</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
   </div>
 </nav>
 </div> <!-- /content -->
-
 
 
 

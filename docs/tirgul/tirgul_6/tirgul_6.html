@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -57,14 +57,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../tirgul/tirgul_6/group_by.html" rel="next">
+<link href="../../tirgul/tirgul_7/tirgul_7.html" rel="next">
 <link href="../../tirgul/tirgul_5/tirgul_5.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -81,13 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
+  "limit": 20,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -96,14 +90,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
@@ -123,33 +116,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
 </head>
 
 <body class="nav-sidebar floating">
@@ -158,12 +124,12 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../tirgul/tirgul_1/tutorial_1.html">Tirgul</a></li><li class="breadcrumb-item"><a href="../../tirgul/tirgul_6/tirgul_6.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tutorial 6</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../tirgul/tirgul_1/tutorial_1.html">Tirgul</a></li><li class="breadcrumb-item"><a href="../../tirgul/tirgul_6/tirgul_6.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tutorial 6</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -173,12 +139,12 @@ window.Quarto = {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../../">Introduction to Data Science</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/ErezFeuer/data-science/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/ErezFeuer/data-science/" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
 </div>
     </div>
       </div>
@@ -242,8 +208,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../tirgul/tirgul_7/tirgul_7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Tutorial 7</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../tirgul/tirgul_6/group_by.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Groupby</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Groupby</span></span></a>
   </div>
 </li>
       </ul>
@@ -251,7 +223,7 @@ window.Quarto = {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -278,7 +250,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../tirgul/tirgul_1/tutorial_1.html">Tirgul</a></li><li class="breadcrumb-item"><a href="../../tirgul/tirgul_6/tirgul_6.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tutorial 6</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tutorial 6</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source" data-quarto-source-url="https://github.com/ErezFeuer/data-science/blob/main/tirgul/tirgul_6/tirgul_6.ipynb"><i class="bi"></i> Code</button></div></div>
 </div>
@@ -293,9 +265,7 @@ window.Quarto = {
   </div>
   
 
-
 </header>
-
 
 <section id="topics" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="topics"><span class="header-section-number">6.1</span> Topics</h2>
@@ -328,22 +298,21 @@ window.Quarto = {
 <ul>
 <li>There is no difference between mean sepal length for <em>Iris virginca</em> and <em>Iris versicolor</em>.</li>
 </ul>
-<div id="cell-6" class="cell" data-execution_count="1">
+<div class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># import packages</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="im">from</span> sklearn <span class="im">import</span> datasets</span>
 <span id="cb1-4"><a href="#cb1-4"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-7" class="cell" data-execution_count="2">
+<div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>iris <span class="op">=</span> datasets.load_iris()</span>
 <span id="cb2-2"><a href="#cb2-2"></a>df<span class="op">=</span> pd.DataFrame(data<span class="op">=</span> np.c_[iris[<span class="st">'data'</span>], iris[<span class="st">'target'</span>]],</span>
 <span id="cb2-3"><a href="#cb2-3"></a>                 columns<span class="op">=</span> iris[<span class="st">'feature_names'</span>] <span class="op">+</span> [<span class="st">'target'</span>])</span>
 <span id="cb2-4"><a href="#cb2-4"></a>df[<span class="st">'species'</span>] <span class="op">=</span> pd.Categorical.from_codes(iris.target, iris.target_names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-8" class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>df.head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
-<div>
 <div>
 
 
@@ -456,9 +425,8 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</div>
 <p>We’ll use a permutation test to compare the mean sepal length for <em>Iris virginca</em> and <em>Iris versicolor</em>. We start by comparing the actual mean sepal length for the species we’re intrested in.</p>
-<div id="cell-10" class="cell" data-execution_count="4">
+<div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># group by species</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a>by_species <span class="op">=</span> df.groupby(<span class="st">"species"</span>)</span>
 <span id="cb4-3"><a href="#cb4-3"></a>by_species.head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -468,7 +436,6 @@ window.Quarto = {
 </div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div>
-<div>
 
 
 <table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
@@ -760,24 +727,22 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</div>
 <p>Seperate out the species we’re interested in</p>
-<div id="cell-12" class="cell" data-execution_count="5">
+<div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>virginica <span class="op">=</span> by_species.get_group(<span class="st">"virginica"</span>)</span>
 <span id="cb6-2"><a href="#cb6-2"></a>versicolor <span class="op">=</span> by_species.get_group(<span class="st">"versicolor"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>work with only 10 rows of each species (this is done to make things more interesting because the more rows we look at the more significant result we will get in the end)</p>
-<div id="cell-14" class="cell" data-execution_count="6">
+<div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>n_rows <span class="op">=</span> <span class="dv">10</span>  <span class="co"># number of rows to keep should be less than 50</span></span>
 <span id="cb7-2"><a href="#cb7-2"></a>virginica <span class="op">=</span> virginica[<span class="dv">0</span>:n_rows]</span>
 <span id="cb7-3"><a href="#cb7-3"></a>versicolor <span class="op">=</span> versicolor[<span class="dv">0</span>:n_rows]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Concatenate the two species into one data frame</p>
-<div id="cell-16" class="cell" data-execution_count="7">
+<div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>data <span class="op">=</span> pd.concat([virginica, versicolor])</span>
 <span id="cb8-2"><a href="#cb8-2"></a>data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
-<div>
 <div>
 
 
@@ -980,9 +945,8 @@ window.Quarto = {
 </div>
 </div>
 </div>
-</div>
 <p>Get the actual mean sepal length for each</p>
-<div id="cell-18" class="cell" data-execution_count="8">
+<div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>grouped <span class="op">=</span> data.groupby(<span class="st">"species"</span>, observed<span class="op">=</span><span class="va">True</span>)[<span class="st">'sepal length (cm)'</span>].mean()</span>
 <span id="cb9-2"><a href="#cb9-2"></a><span class="bu">print</span>(<span class="ss">f'THe mean of sepal length for virginica is </span><span class="sc">{</span>grouped[<span class="st">"virginica"</span>]<span class="sc">}</span><span class="ss">'</span>)</span>
 <span id="cb9-3"><a href="#cb9-3"></a><span class="bu">print</span>(<span class="ss">f'THe mean of sepal length for versicolor is </span><span class="sc">{</span>grouped[<span class="st">"versicolor"</span>]<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -991,18 +955,17 @@ window.Quarto = {
 THe mean of sepal length for versicolor is 6.1</code></pre>
 </div>
 </div>
-<div id="cell-19" class="cell" data-execution_count="9">
+<div class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>abs_dif <span class="op">=</span> np.<span class="bu">abs</span>(grouped[<span class="st">"virginica"</span>] <span class="op">-</span> grouped[<span class="st">"versicolor"</span>])</span>
 <span id="cb11-2"><a href="#cb11-2"></a><span class="bu">print</span>(<span class="ss">f'The difference between the means is </span><span class="sc">{</span>abs_dif<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The difference between the means is 0.47000000000000064</code></pre>
 </div>
 </div>
-<div id="cell-20" class="cell" data-execution_count="10">
+<div class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>data[<span class="st">'species_shuffled'</span>] <span class="op">=</span> data[<span class="st">'species'</span>].sample(frac<span class="op">=</span><span class="dv">1</span>, replace<span class="op">=</span><span class="va">False</span>).values</span>
 <span id="cb13-2"><a href="#cb13-2"></a>data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
-<div>
 <div>
 
 
@@ -1226,8 +1189,7 @@ THe mean of sepal length for versicolor is 6.1</code></pre>
 </div>
 </div>
 </div>
-</div>
-<div id="cell-21" class="cell" data-execution_count="11">
+<div class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>data[<span class="st">'species_shuffled'</span>] <span class="op">=</span> data[<span class="st">'species'</span>].sample(frac<span class="op">=</span><span class="dv">1</span>, replace<span class="op">=</span><span class="va">False</span>).values</span>
 <span id="cb14-2"><a href="#cb14-2"></a>grouped <span class="op">=</span> data.groupby(<span class="st">"species_shuffled"</span>, observed<span class="op">=</span><span class="va">True</span>)[<span class="st">'sepal length (cm)'</span>].mean()</span>
 <span id="cb14-3"><a href="#cb14-3"></a><span class="bu">print</span>(<span class="ss">f'The mean of sepal length for virginica is </span><span class="sc">{</span>grouped[<span class="st">"virginica"</span>]<span class="sc">}</span><span class="ss">'</span>)</span>
@@ -1241,7 +1203,7 @@ The mean of sepal length for versicolor is 6.09
 The difference between the means is 0.4900000000000002</code></pre>
 </div>
 </div>
-<div id="cell-22" class="cell" data-execution_count="12">
+<div class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>runs <span class="op">=</span> <span class="dv">1000</span></span>
 <span id="cb16-2"><a href="#cb16-2"></a>diffs <span class="op">=</span> np.zeros(runs)</span>
 <span id="cb16-3"><a href="#cb16-3"></a><span class="cf">for</span> ii <span class="kw">in</span> <span class="bu">range</span>(runs):</span>
@@ -1249,7 +1211,7 @@ The difference between the means is 0.4900000000000002</code></pre>
 <span id="cb16-5"><a href="#cb16-5"></a>    grouped <span class="op">=</span> data.groupby(<span class="st">"species_shuffled"</span>, observed<span class="op">=</span><span class="va">True</span>)[<span class="st">'sepal length (cm)'</span>].mean()</span>
 <span id="cb16-6"><a href="#cb16-6"></a>    diffs[ii]<span class="op">=</span> np.<span class="bu">abs</span>(grouped[<span class="st">"virginica"</span>] <span class="op">-</span> grouped[<span class="st">"versicolor"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-23" class="cell" data-execution_count="13">
+<div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># compute our p-value</span></span>
 <span id="cb17-2"><a href="#cb17-2"></a>larger <span class="op">=</span> np.where(diffs<span class="op">&gt;=</span>abs_dif, <span class="dv">1</span>, <span class="dv">0</span>)</span>
 <span id="cb17-3"><a href="#cb17-3"></a>p_val <span class="op">=</span> np.<span class="bu">sum</span>(larger)<span class="op">/</span>runs</span>
@@ -1264,16 +1226,15 @@ The difference between the means is 0.4900000000000002</code></pre>
 </div>
 <section id="lets-look-at-it-visually" class="level3" data-number="6.4.1">
 <h3 data-number="6.4.1" class="anchored" data-anchor-id="lets-look-at-it-visually"><span class="header-section-number">6.4.1</span> Let’s look at it visually</h3>
-<div id="cell-25" class="cell" data-scrolled="true" data-execution_count="14">
+<div class="cell" data-scrolled="true" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb20-2"><a href="#cb20-2"></a>ax <span class="op">=</span> sns.histplot(diffs, stat<span class="op">=</span><span class="st">'density'</span>)</span>
 <span id="cb20-3"><a href="#cb20-3"></a>ax.axvline(abs_dif)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="tirgul_6_files/figure-html/cell-15-output-1.png" class="img-fluid figure-img"></p>
-</figure>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<pre><code>&lt;matplotlib.lines.Line2D at 0x128ad8bd0&gt;</code></pre>
 </div>
+<div class="cell-output cell-output-display">
+<p><img src="tirgul_6_files/figure-html/cell-15-output-2.png" class="img-fluid"></p>
 </div>
 </div>
 </section>
@@ -1285,11 +1246,11 @@ The difference between the means is 0.4900000000000002</code></pre>
 <h3 data-number="7.0.1" class="anchored" data-anchor-id="the-scipy.stats-library"><span class="header-section-number">7.0.1</span> The scipy.stats library</h3>
 <p>This module contains a large number of probability distributions, summary and frequency statistics, correlation functions and statistical tests, masked statistics, kernel density estimation, quasi-Monte Carlo functionality, and more.</p>
 <p>https://docs.scipy.org/doc/scipy/reference/stats.html</p>
-<div id="cell-28" class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> stats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> stats</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-29" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>stats.ttest_ind(virginica[<span class="st">'sepal length (cm)'</span>], versicolor[<span class="st">'sepal length (cm)'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a>stats.ttest_ind(virginica[<span class="st">'sepal length (cm)'</span>], versicolor[<span class="st">'sepal length (cm)'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>TtestResult(statistic=1.3707421122118832, pvalue=0.18730715303330478, df=18.0)</code></pre>
 </div>
@@ -1430,9 +1391,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   if (showAllCode) {
     showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+  function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
+      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1442,17 +1404,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start',
+      placement: 'bottom-start'
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1465,125 +1418,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
-          }
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
-        return container.innerHTML
-      } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1627,7 +1461,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
-            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1653,32 +1486,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1740,18 +1547,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../tirgul/tirgul_5/tirgul_5.html" class="pagination-link" aria-label="Tutorial 5">
+      <a href="../../tirgul/tirgul_5/tirgul_5.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tutorial 5</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../tirgul/tirgul_6/group_by.html" class="pagination-link" aria-label="Groupby">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Groupby</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../tirgul/tirgul_7/tirgul_7.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Tutorial 7</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-
 
 
 

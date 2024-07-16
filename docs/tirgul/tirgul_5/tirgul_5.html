@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -81,13 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
+  "limit": 20,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -96,7 +90,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -120,33 +113,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
 </head>
 
 <body class="nav-sidebar floating">
@@ -155,12 +121,12 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../tirgul/tirgul_1/tutorial_1.html">Tirgul</a></li><li class="breadcrumb-item"><a href="../../tirgul/tirgul_5/tirgul_5.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tutorial 5</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../tirgul/tirgul_1/tutorial_1.html">Tirgul</a></li><li class="breadcrumb-item"><a href="../../tirgul/tirgul_5/tirgul_5.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tutorial 5</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -170,12 +136,12 @@ window.Quarto = {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../../">Introduction to Data Science</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/ErezFeuer/data-science/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/ErezFeuer/data-science/" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
 </div>
     </div>
       </div>
@@ -239,8 +205,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../tirgul/tirgul_7/tirgul_7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Tutorial 7</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../tirgul/tirgul_6/group_by.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Groupby</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Groupby</span></span></a>
   </div>
 </li>
       </ul>
@@ -248,7 +220,7 @@ window.Quarto = {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -268,7 +240,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../tirgul/tirgul_1/tutorial_1.html">Tirgul</a></li><li class="breadcrumb-item"><a href="../../tirgul/tirgul_5/tirgul_5.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tutorial 5</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Tutorial 5</span></h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button" data-quarto-source-url="https://github.com/ErezFeuer/data-science/blob/main/tirgul/tirgul_5/tirgul_5.ipynb">View Source</a></li></ul></div></div>
 </div>
@@ -283,9 +255,7 @@ window.Quarto = {
   </div>
   
 
-
 </header>
-
 
 <section id="topics" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="topics"><span class="header-section-number">5.1</span> Topics</h2>
@@ -297,7 +267,7 @@ window.Quarto = {
 </section>
 <section id="standard-error-vs.-standard-deviation" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="standard-error-vs.-standard-deviation"><span class="header-section-number">5.2</span> Standard error vs.&nbsp;standard deviation</h2>
-<div id="cell-3" class="cell" data-execution_count="1">
+<div class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb1-3"><a href="#cb1-3"></a></span>
@@ -305,10 +275,10 @@ window.Quarto = {
 <span id="cb1-5"><a href="#cb1-5"></a>sns.set_theme(style<span class="op">=</span><span class="st">"whitegrid"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Let’s define a “population” of size 1,000,000. Each member of the population will be a number from the standard normal distribution. We will be using the <a href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.randn.html">numpy function</a> <code>randn</code></p>
-<div id="cell-5" class="cell" data-execution_count="2">
+<div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>population <span class="op">=</span> np.random.randn(<span class="dv">1000000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-6" class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>population</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>array([ 0.49671415, -0.1382643 ,  0.64768854, ..., -0.11297975,
@@ -316,7 +286,7 @@ window.Quarto = {
 </div>
 </div>
 <p>What’s the population’s mean and standard deviation?</p>
-<div id="cell-8" class="cell" data-execution_count="4">
+<div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>mean_value <span class="op">=</span> population.mean()</span>
 <span id="cb5-2"><a href="#cb5-2"></a>std <span class="op">=</span> population.std()</span>
 <span id="cb5-3"><a href="#cb5-3"></a><span class="bu">print</span>(<span class="ss">f"The mean value is </span><span class="sc">{</span>mean_value<span class="sc">}</span><span class="ss"> and the standard deviation is </span><span class="sc">{</span>std<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -325,23 +295,19 @@ window.Quarto = {
 </div>
 </div>
 <p>What does the distribution of the population look like?</p>
-<div id="cell-10" class="cell" data-execution_count="5">
+<div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>sns.displot(population)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="tirgul_5_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
+<p><img src="tirgul_5_files/figure-html/cell-6-output-1.png" class="img-fluid"></p>
 </div>
 </div>
 <p>If this were the real world, sampling 1,000,000 people would be difficult. Let’s say that our budget allowed us to sample only 100 people at a time. How can we simulate that?</p>
-<div id="cell-12" class="cell" data-execution_count="6">
+<div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>sample_size <span class="op">=</span> <span class="dv">100</span></span>
 <span id="cb8-2"><a href="#cb8-2"></a>sample_100 <span class="op">=</span> np.random.choice(population, sample_size)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>What’s the sample’s mean and standard deviation?</p>
-<div id="cell-14" class="cell" data-execution_count="7">
+<div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>mean_100 <span class="op">=</span> sample_100.mean()</span>
 <span id="cb9-2"><a href="#cb9-2"></a>std_100 <span class="op">=</span> sample_100.std()</span>
 <span id="cb9-3"><a href="#cb9-3"></a><span class="bu">print</span>(<span class="ss">f"The mean value is </span><span class="sc">{</span>mean_100<span class="sc">}</span><span class="ch">\n</span><span class="ss">The standard deviation is </span><span class="sc">{</span>std_100<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -351,7 +317,7 @@ The standard deviation is 1.1706030198688049</code></pre>
 </div>
 </div>
 <p>Notice that our sample’s mean value is pretty different from that of the population. What if we take a bigger sample size?</p>
-<div id="cell-16" class="cell" data-execution_count="8">
+<div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>sample_size <span class="op">=</span> <span class="dv">1000</span></span>
 <span id="cb11-2"><a href="#cb11-2"></a>sample_1000 <span class="op">=</span> np.random.choice(population, sample_size)</span>
 <span id="cb11-3"><a href="#cb11-3"></a>mean_1000 <span class="op">=</span> sample_1000.mean()</span>
@@ -363,7 +329,7 @@ The standard deviation is 1.003117759041072</code></pre>
 </div>
 </div>
 <p>Or smaller…</p>
-<div id="cell-18" class="cell" data-execution_count="9">
+<div class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>sample_size <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb13-2"><a href="#cb13-2"></a>sample_5 <span class="op">=</span> np.random.choice(population, sample_size)</span>
 <span id="cb13-3"><a href="#cb13-3"></a>mean_5 <span class="op">=</span> sample_5.mean()</span>
@@ -381,7 +347,7 @@ The standard deviation is 0.758566765992809</code></pre>
 <li><span class="math inline">n</span> = the sample size</li>
 </ul>
 <p>Now we can compare our standard errors using the different sample sizes.</p>
-<div id="cell-20" class="cell" data-execution_count="10">
+<div class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>se_5 <span class="op">=</span> std_5<span class="op">/</span>np.sqrt(<span class="dv">5</span>)</span>
 <span id="cb15-2"><a href="#cb15-2"></a>se_100 <span class="op">=</span> std_100<span class="op">/</span>np.sqrt(<span class="dv">100</span>)</span>
 <span id="cb15-3"><a href="#cb15-3"></a>se_1000 <span class="op">=</span> std_1000<span class="op">/</span>np.sqrt(<span class="dv">1000</span>)</span>
@@ -400,7 +366,7 @@ The SEM when the sample size was 1000 was 0.03172136879933749</code></pre>
 <h1 data-number="6"><span class="header-section-number">6</span> Bootstrapping</h1>
 <p>Bootstrapping is a statistical method that involves repeatedly resampling a dataset with replacement to estimate the distribution of a statistic. This technique allows for the assessment of the accuracy and variability of sample estimates, such as the mean or standard deviation, without making strict assumptions about the underlying population distribution. By generating many resampled datasets (called bootstrap samples) and calculating the statistic of interest for each sample, bootstrapping provides an empirical approximation of the sampling distribution. This method is particularly useful when dealing with small samples or when traditional parametric assumptions cannot be applied.</p>
 <p>Let’s create a numpy array to represent heights of females at the Faculta</p>
-<div id="cell-23" class="cell" data-execution_count="11">
+<div class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>np.random.seed(<span class="dv">42</span>)</span>
 <span id="cb17-2"><a href="#cb17-2"></a>mean <span class="op">=</span> <span class="fl">162.2</span></span>
 <span id="cb17-3"><a href="#cb17-3"></a>std <span class="op">=</span> <span class="fl">5.5</span></span>
@@ -422,7 +388,7 @@ The standard deviation is 5.382994142610448</code></pre>
 </div>
 </div>
 <p>Now we can construct a simulated sampling distribution</p>
-<div id="cell-25" class="cell" data-execution_count="12">
+<div class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>boot_straps <span class="op">=</span> <span class="dv">500</span></span>
 <span id="cb19-2"><a href="#cb19-2"></a>sample_size</span>
 <span id="cb19-3"><a href="#cb19-3"></a>sample_means <span class="op">=</span> np.zeros(boot_straps)</span>
@@ -432,7 +398,7 @@ The standard deviation is 5.382994142610448</code></pre>
 <span id="cb19-7"><a href="#cb19-7"></a>                              replace<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb19-8"><a href="#cb19-8"></a>    sample_means[ii]<span class="op">=</span> sample.mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-26" class="cell" data-execution_count="13">
+<div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># now we can find the standard deviation of the means</span></span>
 <span id="cb20-2"><a href="#cb20-2"></a>se_mean_height_bootstrap <span class="op">=</span> sample_means.std()</span>
 <span id="cb20-3"><a href="#cb20-3"></a><span class="bu">print</span>(<span class="ss">f"The standard error of the mean calculated using bootstrapping is: </span><span class="sc">{</span>se_mean_height_bootstrap<span class="sc">:.3f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -444,7 +410,7 @@ The standard deviation is 5.382994142610448</code></pre>
 <p><span class="math inline">\text{SEM} = \frac{\sigma}{\sqrt{n}}</span></p>
 <p>where <span class="math inline">\sigma</span> is the standard deviation of the sample, and <span class="math inline">n</span> is the sample size.</p>
 <p>For other statistics, such as the median, there is no such analytical formula. The utility of the bootstrap method lies in its ability to estimate the SE of these other statistics. By repeatedly resampling the data with replacement and calculating the statistic of interest for each resample, bootstrapping provides an empirical distribution of the statistic. From this distribution, we can estimate the SE and other measures of variability.</p>
-<div id="cell-28" class="cell" data-execution_count="14">
+<div class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>se_mean_height_analytical <span class="op">=</span> heights.std()<span class="op">/</span>np.sqrt(sample_size)</span>
 <span id="cb22-2"><a href="#cb22-2"></a><span class="bu">print</span>(<span class="ss">f"The standard error of the mean calculated using the analytical formula is: </span><span class="sc">{</span>se_mean_height_analytical<span class="sc">:.3f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -454,14 +420,14 @@ The standard deviation is 5.382994142610448</code></pre>
 <section id="confidence-intervals" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="confidence-intervals"><span class="header-section-number">6.1</span> Confidence Intervals</h2>
 <p>We can also compute the confidence interval for our estimate of the mean. Let’s say we want the 90 percent confidence interval.</p>
-<div id="cell-30" class="cell" data-execution_count="15">
+<div class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>conf_level <span class="op">=</span> <span class="fl">0.9</span></span>
 <span id="cb24-2"><a href="#cb24-2"></a>low_bound <span class="op">=</span> (<span class="dv">1</span><span class="op">-</span>conf_level)<span class="op">/</span><span class="dv">2</span></span>
 <span id="cb24-3"><a href="#cb24-3"></a>up_bound <span class="op">=</span> (<span class="dv">1</span><span class="op">+</span>conf_level)<span class="op">/</span><span class="dv">2</span></span>
 <span id="cb24-4"><a href="#cb24-4"></a>CI <span class="op">=</span> (np.quantile(sample_means, low_bound),</span>
 <span id="cb24-5"><a href="#cb24-5"></a>      np.quantile(sample_means, up_bound)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-31" class="cell" data-execution_count="16">
+<div class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a><span class="bu">print</span>(<span class="ss">f"The lower bound of the confidence interval is: </span><span class="sc">{</span>CI[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb25-2"><a href="#cb25-2"></a><span class="bu">print</span>(<span class="ss">f"The upper bound of the confidence interval is: </span><span class="sc">{</span>CI[<span class="dv">1</span>]<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -472,8 +438,8 @@ The upper bound of the confidence interval is: 162.6211799101076</code></pre>
 </section>
 <section id="can-you-bootsrap-confidence-interval-for-the-median" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="can-you-bootsrap-confidence-interval-for-the-median"><span class="header-section-number">6.2</span> Can you bootsrap confidence interval for the median?</h2>
-<div id="cell-33" class="cell" data-execution_count="17">
-<details class="code-fold">
+<div class="cell" data-execution_count="17">
+<details>
 <summary>Answer</summary>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># make a bootstrapped population of the median</span></span>
 <span id="cb27-2"><a href="#cb27-2"></a>boot_straps <span class="op">=</span> <span class="dv">500</span></span>
@@ -633,9 +599,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   if (showAllCode) {
     showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+  function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
+      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -645,17 +612,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start',
+      placement: 'bottom-start'
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -668,125 +626,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
-          }
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
-        return container.innerHTML
-      } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -830,7 +669,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
-            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -856,32 +694,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -943,18 +755,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../tirgul/tirgul_4/tirgul_4.html" class="pagination-link" aria-label="Tutorial 4">
+      <a href="../../tirgul/tirgul_4/tirgul_4.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tutorial 4</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../tirgul/tirgul_6/tirgul_6.html" class="pagination-link" aria-label="Tutorial 6">
+      <a href="../../tirgul/tirgul_6/tirgul_6.html" class="pagination-link">
         <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tutorial 6</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-
 
 
 

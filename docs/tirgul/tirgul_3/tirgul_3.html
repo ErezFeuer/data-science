@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -57,7 +57,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -81,13 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
+  "limit": 20,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -96,14 +90,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
@@ -115,12 +108,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../tirgul/tirgul_1/tutorial_1.html">Tirgul</a></li><li class="breadcrumb-item"><a href="../../tirgul/tirgul_3/tirgul_3.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tutorial 3</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../tirgul/tirgul_1/tutorial_1.html">Tirgul</a></li><li class="breadcrumb-item"><a href="../../tirgul/tirgul_3/tirgul_3.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tutorial 3</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -130,12 +123,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../../">Introduction to Data Science</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/ErezFeuer/data-science/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/ErezFeuer/data-science/" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
 </div>
     </div>
       </div>
@@ -199,8 +192,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../tirgul/tirgul_7/tirgul_7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Tutorial 7</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../tirgul/tirgul_6/group_by.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Groupby</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Groupby</span></span></a>
   </div>
 </li>
       </ul>
@@ -208,7 +207,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -238,7 +237,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../tirgul/tirgul_1/tutorial_1.html">Tirgul</a></li><li class="breadcrumb-item"><a href="../../tirgul/tirgul_3/tirgul_3.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tutorial 3</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tutorial 3</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source" data-quarto-source-url="https://github.com/ErezFeuer/data-science/blob/main/tirgul/tirgul_3/tirgul_3.ipynb"><i class="bi"></i> Code</button></div></div>
 </div>
@@ -253,9 +252,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
-
 </header>
-
 
 <section id="principal-component-analysis" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="principal-component-analysis"><span class="header-section-number">3.1</span> Principal Component Analysis</h2>
@@ -272,68 +269,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li>Imagine this is our dataset that we’re trying to cluster; we only have two dimensions.</li>
 </ol>
-<div id="cell-3" class="cell" data-execution_count="1">
+<div class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="op">%</span>matplotlib inline</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="im">from</span> IPython.display <span class="im">import</span> Image</span>
 <span id="cb1-3"><a href="#cb1-3"></a>Image(<span class="st">'image_1.png'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
-<div>
-<figure class="figure">
-<p><img src="tirgul_3_files/figure-html/cell-2-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
+<p><img src="tirgul_3_files/figure-html/cell-2-output-1.png" class="img-fluid"></p>
 </div>
 </div>
 <ol start="2" type="1">
 <li>If we project the data onto the horizontal axis (our attribute 1) we won’t see much spread; it will show a nearly equal distribution of the observations.</li>
 </ol>
-<div id="cell-5" class="cell" data-execution_count="2">
+<div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>Image(<span class="st">'image_2.png'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
-<div>
-<figure class="figure">
-<p><img src="tirgul_3_files/figure-html/cell-3-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
+<p><img src="tirgul_3_files/figure-html/cell-3-output-1.png" class="img-fluid"></p>
 </div>
 </div>
 <ol start="3" type="1">
 <li>Attribute 2, obviously, isn’t hugely helpful either.</li>
 </ol>
-<div id="cell-7" class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>Image(<span class="st">'image_3.png'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
-<div>
-<figure class="figure">
-<p><img src="tirgul_3_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
+<p><img src="tirgul_3_files/figure-html/cell-4-output-1.png" class="img-fluid"></p>
 </div>
 </div>
 <ol start="4" type="1">
 <li>Evidently, the data points in our case are spreading diagonally so we need a new line that would better capture this.</li>
 </ol>
-<div id="cell-9" class="cell" data-execution_count="4">
+<div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>Image(<span class="st">'image_4.png'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
-<div>
-<figure class="figure">
-<p><img src="tirgul_3_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
+<p><img src="tirgul_3_files/figure-html/cell-5-output-1.png" class="img-fluid"></p>
 </div>
 </div>
 <ol start="5" type="1">
 <li>The second PC must represent the second maximum amount of variance; it’s going to be a line that’s orthogonal to our first axis. *Due to PCA’s math being based on eigenvectors and eigenvalues, new principal components will always come out orthogonal to the ones before them.</li>
 </ol>
-<div id="cell-11" class="cell" data-execution_count="5">
+<div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>Image(<span class="st">'image_5.png'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
-<div>
-<figure class="figure">
-<p><img src="tirgul_3_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
+<p><img src="tirgul_3_files/figure-html/cell-6-output-1.png" class="img-fluid"></p>
 </div>
 </div>
 <section id="important" class="level4" data-number="3.1.1.1">
@@ -345,7 +322,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="example" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="example"><span class="header-section-number">3.2</span> Example</h2>
 <p>https://jakevdp.github.io/PythonDataScienceHandbook/05.09-principal-component-analysis.html</p>
-<div id="cell-14" class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># import packages </span></span>
 <span id="cb6-2"><a href="#cb6-2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb6-3"><a href="#cb6-3"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -353,26 +330,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-5"><a href="#cb6-5"></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span>
 <span id="cb6-6"><a href="#cb6-6"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-15" class="cell" data-execution_count="4">
+<div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># create and plot some random data </span></span>
 <span id="cb7-2"><a href="#cb7-2"></a>rng <span class="op">=</span> np.random.RandomState(<span class="dv">1</span>)</span>
 <span id="cb7-3"><a href="#cb7-3"></a>X <span class="op">=</span> np.dot(rng.rand(<span class="dv">2</span>, <span class="dv">2</span>), rng.randn(<span class="dv">2</span>, <span class="dv">200</span>)).T</span>
 <span id="cb7-4"><a href="#cb7-4"></a>plt.scatter(X[:, <span class="dv">0</span>], X[:, <span class="dv">1</span>])</span>
 <span id="cb7-5"><a href="#cb7-5"></a>plt.axis(<span class="st">'equal'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="tirgul_3_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
-</figure>
+<p><img src="tirgul_3_files/figure-html/cell-8-output-1.png" class="img-fluid"></p>
 </div>
 </div>
-</div>
-<div id="cell-16" class="cell" data-execution_count="9">
+<div class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># use sklearn to do PCA</span></span>
 <span id="cb8-2"><a href="#cb8-2"></a>pca <span class="op">=</span> PCA(n_components<span class="op">=</span><span class="dv">2</span>)</span>
 <span id="cb8-3"><a href="#cb8-3"></a>pca.fit(X)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-17" class="cell" data-execution_count="10">
+<div class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># get components</span></span>
 <span id="cb9-2"><a href="#cb9-2"></a><span class="bu">print</span>(pca.components_)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -380,7 +353,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  [-0.32862557  0.94446029]]</code></pre>
 </div>
 </div>
-<div id="cell-18" class="cell" data-execution_count="11">
+<div class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># get explained variance</span></span>
 <span id="cb11-2"><a href="#cb11-2"></a><span class="bu">print</span>(pca.explained_variance_)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -388,7 +361,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>To see what these numbers mean, let’s visualize them as vectors over the input data, using the “components” to define the direction of the vector, and the “explained variance” to define the squared-length of the vector.</p>
-<div id="cell-20" class="cell" data-execution_count="8">
+<div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a><span class="kw">def</span> draw_vector(v0, v1, ax<span class="op">=</span><span class="va">None</span>):</span>
 <span id="cb13-2"><a href="#cb13-2"></a>    ax <span class="op">=</span> ax <span class="kw">or</span> plt.gca()</span>
 <span id="cb13-3"><a href="#cb13-3"></a>    arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">'-&gt;'</span>,</span>
@@ -403,18 +376,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-12"><a href="#cb13-12"></a>    draw_vector(pca.mean_, pca.mean_ <span class="op">+</span> v)</span>
 <span id="cb13-13"><a href="#cb13-13"></a>plt.axis(<span class="st">'equal'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="tirgul_3_files/figure-html/cell-12-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
+<p><img src="tirgul_3_files/figure-html/cell-12-output-1.png" class="img-fluid"></p>
 </div>
 </div>
 <p>These vectors represent the principal axes of the data, and the length of the vector is an indication of how “important” that axis is in describing the distribution of the data—more precisely, it is a measure of the variance of the data when projected onto that axis. The projection of each data point onto the principal axes are the “principal components” of the data.</p>
 <section id="dimensional-reduction" class="level3" data-number="3.2.1">
 <h3 data-number="3.2.1" class="anchored" data-anchor-id="dimensional-reduction"><span class="header-section-number">3.2.1</span> Dimensional reduction</h3>
 <p>Using PCA for dimensionality reduction involves zeroing out one or more of the smallest principal components, resulting in a lower-dimensional projection of the data that preserves the maximal data variance.</p>
-<div id="cell-23" class="cell" data-execution_count="12">
+<div class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>pca <span class="op">=</span> PCA(n_components<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb14-2"><a href="#cb14-2"></a>pca.fit(X)</span>
 <span id="cb14-3"><a href="#cb14-3"></a>X_pca <span class="op">=</span> pca.transform(X)</span>
@@ -426,17 +395,13 @@ transformed shape: (200, 1)</code></pre>
 </div>
 </div>
 <p>The transformed data has been reduced to a single dimension. To understand the effect of this dimensionality reduction, we can perform the inverse transform of this reduced data and plot it along with the original data.</p>
-<div id="cell-25" class="cell" data-execution_count="13">
+<div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>X_new <span class="op">=</span> pca.inverse_transform(X_pca)</span>
 <span id="cb16-2"><a href="#cb16-2"></a>plt.scatter(X[:, <span class="dv">0</span>], X[:, <span class="dv">1</span>], alpha<span class="op">=</span><span class="fl">0.2</span>)</span>
 <span id="cb16-3"><a href="#cb16-3"></a>plt.scatter(X_new[:, <span class="dv">0</span>], X_new[:, <span class="dv">1</span>], alpha<span class="op">=</span><span class="fl">0.8</span>)</span>
 <span id="cb16-4"><a href="#cb16-4"></a>plt.axis(<span class="st">'equal'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="tirgul_3_files/figure-html/cell-14-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
+<p><img src="tirgul_3_files/figure-html/cell-14-output-1.png" class="img-fluid"></p>
 </div>
 </div>
 <p>The light points are the original data, while the dark points are the projected version. This makes clear what a PCA dimensionality reduction means: the information along the least important principal axis or axes is removed, leaving only the component(s) of the data with the highest variance. The fraction of variance that is cut out (proportional to the spread of points about the line formed in this figure) is roughly a measure of how much “information” is discarded in this reduction of dimensionality.</p>
@@ -447,7 +412,7 @@ transformed shape: (200, 1)</code></pre>
 <p>The MNIST database of handwritten digits has 784 feature columns (784 dimensions).</p>
 <p>We can break it into a training set of 60,000 examples, and a test set of 10,000 examples.</p>
 <p>https://towardsdatascience.com/pca-using-python-scikit-learn-e653f8989e60</p>
-<div id="cell-28" class="cell" data-execution_count="12">
+<div class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># get MNIST dataset</span></span>
 <span id="cb17-2"><a href="#cb17-2"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> fetch_openml</span>
 <span id="cb17-3"><a href="#cb17-3"></a>mnist <span class="op">=</span> fetch_openml(<span class="st">'mnist_784'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -456,14 +421,14 @@ transformed shape: (200, 1)</code></pre>
   warn(</code></pre>
 </div>
 </div>
-<div id="cell-29" class="cell" data-execution_count="14">
+<div class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># the data consists of images -- there are 70,000 images with 784 dimensions (784 features)</span></span>
 <span id="cb19-2"><a href="#cb19-2"></a>mnist.data.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>(70000, 784)</code></pre>
 </div>
 </div>
-<div id="cell-30" class="cell" data-execution_count="15">
+<div class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># each image is a number</span></span>
 <span id="cb21-2"><a href="#cb21-2"></a>mnist.target[<span class="dv">0</span>:<span class="dv">10</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
@@ -481,7 +446,7 @@ Name: class, dtype: category
 Categories (10, object): ['0', '1', '2', '3', ..., '6', '7', '8', '9']</code></pre>
 </div>
 </div>
-<div id="cell-31" class="cell" data-execution_count="16">
+<div class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># split into training and test sets</span></span>
 <span id="cb23-2"><a href="#cb23-2"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
 <span id="cb23-3"><a href="#cb23-3"></a></span>
@@ -495,7 +460,7 @@ Categories (10, object): ['0', '1', '2', '3', ..., '6', '7', '8', '9']</code></p
 <span id="cb23-11"><a href="#cb23-11"></a>                              test_size<span class="op">=</span>test_size, </span>
 <span id="cb23-12"><a href="#cb23-12"></a>                              random_state<span class="op">=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-32" class="cell" data-execution_count="17">
+<div class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># standardize the data</span></span>
 <span id="cb24-2"><a href="#cb24-2"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
 <span id="cb24-3"><a href="#cb24-3"></a>scaler <span class="op">=</span> StandardScaler()</span>
@@ -510,20 +475,20 @@ Categories (10, object): ['0', '1', '2', '3', ..., '6', '7', '8', '9']</code></p
 </section>
 <section id="apply-pca" class="level3" data-number="3.2.3">
 <h3 data-number="3.2.3" class="anchored" data-anchor-id="apply-pca"><span class="header-section-number">3.2.3</span> Apply PCA</h3>
-<div id="cell-34" class="cell" data-execution_count="18">
+<div class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># make an instance of the model</span></span>
 <span id="cb25-2"><a href="#cb25-2"></a>pca <span class="op">=</span> PCA(<span class="fl">.95</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="notice-the-code-below-has-.95-for-the-number-of-components-parameter.-it-means-that-scikit-learn-choose-the-minimum-number-of-principal-components-such-that-95-of-the-variance-is-retained." class="level4" data-number="3.2.3.1">
 <h4 data-number="3.2.3.1" class="anchored" data-anchor-id="notice-the-code-below-has-.95-for-the-number-of-components-parameter.-it-means-that-scikit-learn-choose-the-minimum-number-of-principal-components-such-that-95-of-the-variance-is-retained."><span class="header-section-number">3.2.3.1</span> Notice the code below has .95 for the number of components parameter. It means that scikit-learn choose the minimum number of principal components such that 95% of the variance is retained.</h4>
-<div id="cell-36" class="cell" data-execution_count="19">
+<div class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a><span class="co"># fit on training data set</span></span>
 <span id="cb26-2"><a href="#cb26-2"></a>pca.fit(train_img)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
 <style>#sk-container-id-1 {color: black;background-color: white;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>PCA(n_components=0.95)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked=""><label for="sk-estimator-id-1" class="sk-toggleable__label sk-toggleable__label-arrow">PCA</label><div class="sk-toggleable__content"><pre>PCA(n_components=0.95)</pre></div></div></div></div></div>
 </div>
 </div>
-<div id="cell-37" class="cell" data-execution_count="20">
+<div class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># how many components are there?</span></span>
 <span id="cb27-2"><a href="#cb27-2"></a>pca.n_components_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
@@ -535,12 +500,12 @@ Categories (10, object): ['0', '1', '2', '3', ..., '6', '7', '8', '9']</code></p
 </section>
 <section id="what-do-we-gain-from-this" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="what-do-we-gain-from-this"><span class="header-section-number">3.3</span> What do we gain from this?</h2>
-<div id="cell-39" class="cell" data-execution_count="21">
+<div class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a><span class="co"># apply the transform to both the training set and the test set.</span></span>
 <span id="cb29-2"><a href="#cb29-2"></a>train_img <span class="op">=</span> pca.transform(train_img)</span>
 <span id="cb29-3"><a href="#cb29-3"></a>test_img <span class="op">=</span> pca.transform(test_img)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-40" class="cell" data-execution_count="22">
+<div class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a><span class="co"># let's make a logistic model</span></span>
 <span id="cb30-2"><a href="#cb30-2"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</span>
 <span id="cb30-3"><a href="#cb30-3"></a></span>
@@ -553,7 +518,7 @@ Categories (10, object): ['0', '1', '2', '3', ..., '6', '7', '8', '9']</code></p
 <style>#sk-container-id-2 {color: black;background-color: white;}#sk-container-id-2 pre{padding: 0;}#sk-container-id-2 div.sk-toggleable {background-color: white;}#sk-container-id-2 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-2 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-2 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-2 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-2 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-2 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-2 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-2 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-2 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-2 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-2 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-2 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-2 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-2 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-2 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-2 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-2 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-2 div.sk-item {position: relative;z-index: 1;}#sk-container-id-2 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-2 div.sk-item::before, #sk-container-id-2 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-2 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-2 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-2 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-2 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-2 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-2 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-2 div.sk-label-container {text-align: center;}#sk-container-id-2 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-2 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-2" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>LogisticRegression(max_iter=1000)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-2" type="checkbox" checked=""><label for="sk-estimator-id-2" class="sk-toggleable__label sk-toggleable__label-arrow">LogisticRegression</label><div class="sk-toggleable__content"><pre>LogisticRegression(max_iter=1000)</pre></div></div></div></div></div>
 </div>
 </div>
-<div id="cell-41" class="cell" data-execution_count="36">
+<div class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a><span class="co"># predict for multiple observations (images) at once</span></span>
 <span id="cb31-2"><a href="#cb31-2"></a><span class="bu">print</span>(<span class="ss">f'Predicted</span><span class="ch">\t</span><span class="sc">{</span>logisticRegr<span class="sc">.</span>predict(test_img[<span class="dv">0</span>:<span class="dv">10</span>])<span class="sc">}</span><span class="ss">'</span>)</span>
 <span id="cb31-3"><a href="#cb31-3"></a><span class="bu">print</span>(<span class="ss">f'Observed</span><span class="ch">\t</span><span class="sc">{</span>np<span class="sc">.</span>array(test_lbl[<span class="dv">0</span>:<span class="dv">10</span>])<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -562,7 +527,7 @@ Categories (10, object): ['0', '1', '2', '3', ..., '6', '7', '8', '9']</code></p
 Observed    ['0' '4' '1' '2' '7' '9' '7' '1' '1' '7']</code></pre>
 </div>
 </div>
-<div id="cell-42" class="cell" data-execution_count="27">
+<div class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1"></a><span class="co"># how does the model do?</span></span>
 <span id="cb33-2"><a href="#cb33-2"></a>score <span class="op">=</span> logisticRegr.score(test_img, test_lbl)</span>
 <span id="cb33-3"><a href="#cb33-3"></a>score</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -571,7 +536,7 @@ Observed    ['0' '4' '1' '2' '7' '9' '7' '1' '1' '7']</code></pre>
 </div>
 </div>
 <p>how does changing the amount of variance affect the model?</p>
-<div id="cell-44" class="cell" data-execution_count="26">
+<div class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1"></a>pd.DataFrame(data <span class="op">=</span> [[<span class="fl">1.00</span>, <span class="dv">784</span>, <span class="fl">48.94</span>, <span class="fl">.9158</span>],</span>
 <span id="cb35-2"><a href="#cb35-2"></a>                     [<span class="fl">.99</span>, <span class="dv">541</span>, <span class="fl">34.69</span>, <span class="fl">.9169</span>],</span>
 <span id="cb35-3"><a href="#cb35-3"></a>                     [<span class="fl">.95</span>, <span class="dv">330</span>, <span class="fl">13.89</span>, <span class="fl">.92</span>],</span>
@@ -582,7 +547,6 @@ Observed    ['0' '4' '1' '2' '7' '9' '7' '1' '1' '7']</code></pre>
 <span id="cb35-8"><a href="#cb35-8"></a>                      <span class="st">'Time (seconds)'</span>,</span>
 <span id="cb35-9"><a href="#cb35-9"></a>                      <span class="st">'Accuracy'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="26">
-<div>
 <div>
 
 
@@ -638,12 +602,11 @@ Observed    ['0' '4' '1' '2' '7' '9' '7' '1' '1' '7']</code></pre>
 </div>
 </div>
 </div>
-</div>
 </section>
 <section id="looking-at-the-data-a-more-broadly---pair-plot-clustering-ploting-pca" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="looking-at-the-data-a-more-broadly---pair-plot-clustering-ploting-pca"><span class="header-section-number">3.4</span> Looking at the data a more broadly - pair plot, clustering, ploting PCA</h2>
 <p>seaborn has some powerful functions for visualisation of the whole dataset</p>
-<div id="cell-46" class="cell" data-execution_count="37">
+<div class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1"></a><span class="co"># import packages </span></span>
 <span id="cb36-2"><a href="#cb36-2"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb36-3"><a href="#cb36-3"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -652,7 +615,7 @@ Observed    ['0' '4' '1' '2' '7' '9' '7' '1' '1' '7']</code></pre>
 <span id="cb36-6"><a href="#cb36-6"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Load the <a href="https://scikit-learn.org/stable/datasets/toy_dataset.html#breast-cancer-dataset">breast cancer dataset</a>. In this dataset features are computed from a digitized image of a fine needle aspirate (FNA) of a breast mass. They describe characteristics of the cell nuclei present in the image.</p>
-<div id="cell-48" class="cell" data-execution_count="38">
+<div class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> load_breast_cancer</span>
 <span id="cb37-2"><a href="#cb37-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb37-3"><a href="#cb37-3"></a></span>
@@ -661,7 +624,7 @@ Observed    ['0' '4' '1' '2' '7' '9' '7' '1' '1' '7']</code></pre>
 <span id="cb37-6"><a href="#cb37-6"></a>all_data <span class="op">=</span> data.copy()</span>
 <span id="cb37-7"><a href="#cb37-7"></a>all_data[<span class="st">'target'</span>] <span class="op">=</span> cancer_data.target</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-49" class="cell" data-execution_count="39">
+<div class="cell" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1"></a>data.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="39">
 <pre><code>Index(['mean radius', 'mean texture', 'mean perimeter', 'mean area',
@@ -679,26 +642,22 @@ Observed    ['0' '4' '1' '2' '7' '9' '7' '1' '1' '7']</code></pre>
 <section id="pair-plot" class="level3" data-number="3.4.1">
 <h3 data-number="3.4.1" class="anchored" data-anchor-id="pair-plot"><span class="header-section-number">3.4.1</span> Pair plot</h3>
 <p>A pair plot in Seaborn is a grid of scatterplots and histograms showing the pairwise relationships and distributions of multiple variables in a dataset. It can be used to visualize patterns and correlations between variables, identify potential outliers or clusters, and guide further analysis.</p>
-<div id="cell-51" class="cell" data-execution_count="40">
+<div class="cell" data-execution_count="40">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1"></a>sns.pairplot(data<span class="op">=</span>all_data[[<span class="st">'mean radius'</span>, <span class="st">'mean texture'</span>, <span class="st">'mean perimeter'</span>, <span class="st">'mean area'</span>,</span>
 <span id="cb40-2"><a href="#cb40-2"></a>       <span class="st">'mean smoothness'</span>, <span class="st">'mean compactness'</span>,<span class="st">'target'</span>]], hue<span class="op">=</span><span class="st">'target'</span>,corner<span class="op">=</span><span class="va">True</span>, markers<span class="op">=</span><span class="st">'+'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="tirgul_3_files/figure-html/cell-31-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
+<p><img src="tirgul_3_files/figure-html/cell-31-output-1.png" class="img-fluid"></p>
 </div>
 </div>
 </section>
 <section id="clustermap" class="level3" data-number="3.4.2">
 <h3 data-number="3.4.2" class="anchored" data-anchor-id="clustermap"><span class="header-section-number">3.4.2</span> Clustermap</h3>
 <p>A clustermap in Seaborn is a heatmap-like plot that arranges rows and columns of a dataset based on their similarity and creates dendrograms to show hierarchical clustering. It can be used to explore patterns and relationships in high-dimensional data, identify groups or clusters of similar observations, and guide feature selection or dimensionality reduction.</p>
-<div id="cell-53" class="cell" data-execution_count="42">
+<div class="cell" data-execution_count="42">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1"></a><span class="co"># first we standardize the data by computing the z score </span></span>
 <span id="cb41-2"><a href="#cb41-2"></a>z <span class="op">=</span> data.<span class="bu">apply</span>(<span class="kw">lambda</span> x:(x<span class="op">-</span>x.mean())<span class="op">/</span>x.std(), axis<span class="op">=</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-54" class="cell" data-execution_count="43">
+<div class="cell" data-execution_count="43">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1"></a><span class="co"># Ploting the clustermap</span></span>
 <span id="cb42-2"><a href="#cb42-2"></a>lut <span class="op">=</span> <span class="bu">dict</span>(<span class="bu">zip</span>(all_data[<span class="st">'target'</span>].unique(), <span class="st">"rbg"</span>))</span>
 <span id="cb42-3"><a href="#cb42-3"></a>row_colors <span class="op">=</span> all_data[<span class="st">'target'</span>].<span class="bu">map</span>(lut)</span>
@@ -715,30 +674,22 @@ Observed    ['0' '4' '1' '2' '7' '9' '7' '1' '1' '7']</code></pre>
   warnings.warn(msg)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="tirgul_3_files/figure-html/cell-33-output-2.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
+<p><img src="tirgul_3_files/figure-html/cell-33-output-2.png" class="img-fluid"></p>
 </div>
 </div>
 </section>
 <section id="ploting-pca" class="level3" data-number="3.4.3">
 <h3 data-number="3.4.3" class="anchored" data-anchor-id="ploting-pca"><span class="header-section-number">3.4.3</span> Ploting PCA</h3>
-<div id="cell-56" class="cell" data-execution_count="44">
+<div class="cell" data-execution_count="44">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1"></a>pca <span class="op">=</span> PCA().fit(z)</span>
 <span id="cb44-2"><a href="#cb44-2"></a>plt.plot(np.cumsum(pca.explained_variance_ratio_))</span>
 <span id="cb44-3"><a href="#cb44-3"></a>plt.xlabel(<span class="st">'number of components'</span>)</span>
 <span id="cb44-4"><a href="#cb44-4"></a>plt.ylabel(<span class="st">'cumulative explained variance'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="tirgul_3_files/figure-html/cell-34-output-1.png" class="img-fluid figure-img"></p>
-</figure>
+<p><img src="tirgul_3_files/figure-html/cell-34-output-1.png" class="img-fluid"></p>
 </div>
 </div>
-</div>
-<div id="cell-57" class="cell" data-execution_count="45">
+<div class="cell" data-execution_count="45">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1"></a>X <span class="op">=</span> z </span>
 <span id="cb45-2"><a href="#cb45-2"></a>pca <span class="op">=</span> PCA().fit(X)</span>
 <span id="cb45-3"><a href="#cb45-3"></a>X_trans <span class="op">=</span> pca.transform(X)</span>
@@ -752,11 +703,7 @@ Observed    ['0' '4' '1' '2' '7' '9' '7' '1' '1' '7']</code></pre>
 <pre><code>Text(0, 0.5, 'PC2 (18.97%)')</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="tirgul_3_files/figure-html/cell-35-output-2.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
+<p><img src="tirgul_3_files/figure-html/cell-35-output-2.png" class="img-fluid"></p>
 </div>
 </div>
 
@@ -895,9 +842,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   if (showAllCode) {
     showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+  function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
+      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -907,17 +855,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start',
+      placement: 'bottom-start'
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -930,125 +869,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
-          }
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
-        return container.innerHTML
-      } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1092,7 +912,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
-            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1118,32 +937,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1205,18 +998,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../tirgul/tirgul_2/tirgul_2.html" class="pagination-link" aria-label="Tutorial 2">
+      <a href="../../tirgul/tirgul_2/tirgul_2.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tutorial 2</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../tirgul/tirgul_4/tirgul_4.html" class="pagination-link" aria-label="Tutorial 4">
+      <a href="../../tirgul/tirgul_4/tirgul_4.html" class="pagination-link">
         <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tutorial 4</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-
 
 
 
