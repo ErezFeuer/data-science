@@ -20,6 +20,10 @@ book:
       - tirgul/tirgul_6/tirgul_6.ipynb
       - tirgul/tirgul_7/tirgul_7.ipynb
       - tirgul/tirgul_6/group_by.ipynb
+      - tirgul/tirgul_8/bonferroni.ipynb
+      - tirgul/tirgul_8/logistic_regression.ipynb
+      - tirgul/tirgul_9/multiple_regression.ipynb
+      - tirgul/tirgul_9/regularized_regression.ipynb
     
 
 
