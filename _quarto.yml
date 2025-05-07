@@ -1,0 +1,70 @@
+project:
+  type: book
+  output-dir: docs
+
+
+book:
+  title: "Introduction to Data Science"
+  author: "Yonatan Friedman & Erez Feuer"
+  repo-url: https://github.com/ErezFeuer/data-science/
+  # favicon: archive/clock-history.png
+  chapters:
+    - index.qmd
+    - part: "Tirgul"
+      chapters:
+      - tirgul/tirgul_1/tutorial_1.ipynb
+      - tirgul/tirgul_2/tirgul_2.ipynb
+      - tirgul/tirgul_3/tirgul_3.ipynb
+      - tirgul/tirgul_4/tirgul_4.ipynb
+      - tirgul/tirgul_5/tirgul_5.ipynb
+      - tirgul/tirgul_6/tirgul_6.ipynb
+      - tirgul/tirgul_7/tirgul_7.ipynb
+      - tirgul/tirgul_6/group_by.ipynb
+      - tirgul/tirgul_8/bonferroni.ipynb
+      - tirgul/tirgul_8/logistic_regression.ipynb
+      - tirgul/tirgul_9/multiple_regression.ipynb
+      - tirgul/tirgul_9/regularized_regression.ipynb
+    
+
+
+
+
+  sidebar:
+    collapse-level: 2
+    # tools:
+    #   - icon: house-fill
+    #     href: https://yairmau.com/
+    #   - icon: bookmark-fill
+    #     href: /sources.html
+    #   - icon: asterisk
+    #     href: /things-to-remember.html
+    # logo: archive/clock-history.png
+  search: true
+
+bibliography: references.bib
+
+format:
+  html:
+    theme:
+    - flatly
+    - custom.scss
+    # - font_defs.css
+    # css: styles.css
+    fontsize: 1.2em
+    highlight-style: breezedark # monokai # breezedark # espresso     
+    code-line-numbers: true
+    code-tools:
+      source: repo  # https://quarto.org/docs/output-formats/html-code.html#code-tools
+    callout-icon: false
+    fig-align: center
+    # the default MathJax rendering option yields ugly results, use katex
+    html-math-method: katex
+  
+  pdf:
+    documentclass: scrreprt
+
+      
+
+
+
+
